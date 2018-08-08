@@ -10,6 +10,12 @@
 		14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0251F211AD96A00BE0D15 /* AppDelegate.swift */; };
 		14D02527211AD96B00BE0D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D02526211AD96B00BE0D15 /* Assets.xcassets */; };
 		14D0252A211AD96B00BE0D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D02528211AD96B00BE0D15 /* LaunchScreen.storyboard */; };
+		14D0258E211B044300BE0D15 /* ZXMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0258D211B044300BE0D15 /* ZXMTabBarViewController.swift */; };
+		14D02593211B05B500BE0D15 /* ZXMHallTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D02592211B05B500BE0D15 /* ZXMHallTableViewController.swift */; };
+		14D02598211B060B00BE0D15 /* ZXMArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D02597211B060B00BE0D15 /* ZXMArenaViewController.swift */; };
+		14D0259D211B066200BE0D15 /* ZXMDiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0259C211B066200BE0D15 /* ZXMDiscoverTableViewController.swift */; };
+		14D025A2211B06B000BE0D15 /* ZXMHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D025A1211B06B000BE0D15 /* ZXMHistoryTableViewController.swift */; };
+		14D025A4211B070200BE0D15 /* ZXMMyLotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D025A3211B070200BE0D15 /* ZXMMyLotteryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +24,12 @@
 		14D02526211AD96B00BE0D15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14D02529211AD96B00BE0D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14D0252B211AD96B00BE0D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14D0258D211B044300BE0D15 /* ZXMTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMTabBarViewController.swift; sourceTree = "<group>"; };
+		14D02592211B05B500BE0D15 /* ZXMHallTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMHallTableViewController.swift; sourceTree = "<group>"; };
+		14D02597211B060B00BE0D15 /* ZXMArenaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMArenaViewController.swift; sourceTree = "<group>"; };
+		14D0259C211B066200BE0D15 /* ZXMDiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMDiscoverTableViewController.swift; sourceTree = "<group>"; };
+		14D025A1211B06B000BE0D15 /* ZXMHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMHistoryTableViewController.swift; sourceTree = "<group>"; };
+		14D025A3211B070200BE0D15 /* ZXMMyLotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMMyLotteryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 		14D0256F211AFCDB00BE0D15 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				14D02589211AFCDB00BE0D15 /* Extension+Tools(扩展工具) */,
 				14D0257C211AFCDB00BE0D15 /* Others */,
 				14D02581211AFCDB00BE0D15 /* Main(主要) */,
 				14D02570211AFCDB00BE0D15 /* Hall(购票大厅) */,
@@ -67,7 +80,6 @@
 				14D02578211AFCDB00BE0D15 /* Arena(竞技场) */,
 				14D0257D211AFCDB00BE0D15 /* Discover(发现) */,
 				14D02585211AFCDB00BE0D15 /* History(开奖信息) */,
-				14D02589211AFCDB00BE0D15 /* Extension+Tools(扩展工具) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -85,6 +97,7 @@
 		14D02571211AFCDB00BE0D15 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14D02592211B05B500BE0D15 /* ZXMHallTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -116,6 +129,7 @@
 		14D02575211AFCDB00BE0D15 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14D025A3211B070200BE0D15 /* ZXMMyLotteryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -147,6 +161,7 @@
 		14D02579211AFCDB00BE0D15 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14D02597211B060B00BE0D15 /* ZXMArenaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +202,7 @@
 		14D0257E211AFCDB00BE0D15 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14D0259C211B066200BE0D15 /* ZXMDiscoverTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +234,7 @@
 		14D02582211AFCDB00BE0D15 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14D0258D211B044300BE0D15 /* ZXMTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +266,7 @@
 		14D02586211AFCDB00BE0D15 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14D025A1211B06B000BE0D15 /* ZXMHistoryTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,7 +363,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D025A2211B06B000BE0D15 /* ZXMHistoryTableViewController.swift in Sources */,
+				14D02598211B060B00BE0D15 /* ZXMArenaViewController.swift in Sources */,
+				14D025A4211B070200BE0D15 /* ZXMMyLotteryViewController.swift in Sources */,
+				14D0258E211B044300BE0D15 /* ZXMTabBarViewController.swift in Sources */,
+				14D0259D211B066200BE0D15 /* ZXMDiscoverTableViewController.swift in Sources */,
 				14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */,
+				14D02593211B05B500BE0D15 /* ZXMHallTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
