@@ -50,12 +50,228 @@
 		14D0251E211AD96A00BE0D15 /* caipiaoSwift */ = {
 			isa = PBXGroup;
 			children = (
-				14D0251F211AD96A00BE0D15 /* AppDelegate.swift */,
+				14D0256F211AFCDB00BE0D15 /* Classes */,
 				14D02526211AD96B00BE0D15 /* Assets.xcassets */,
 				14D02528211AD96B00BE0D15 /* LaunchScreen.storyboard */,
-				14D0252B211AD96B00BE0D15 /* Info.plist */,
 			);
 			path = caipiaoSwift;
+			sourceTree = "<group>";
+		};
+		14D0256F211AFCDB00BE0D15 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				14D0257C211AFCDB00BE0D15 /* Others */,
+				14D02581211AFCDB00BE0D15 /* Main(主要) */,
+				14D02570211AFCDB00BE0D15 /* Hall(购票大厅) */,
+				14D02574211AFCDB00BE0D15 /* MyLottery(我的彩票) */,
+				14D02578211AFCDB00BE0D15 /* Arena(竞技场) */,
+				14D0257D211AFCDB00BE0D15 /* Discover(发现) */,
+				14D02585211AFCDB00BE0D15 /* History(开奖信息) */,
+				14D02589211AFCDB00BE0D15 /* Extension+Tools(扩展工具) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		14D02570211AFCDB00BE0D15 /* Hall(购票大厅) */ = {
+			isa = PBXGroup;
+			children = (
+				14D02571211AFCDB00BE0D15 /* Controller */,
+				14D02572211AFCDB00BE0D15 /* Model */,
+				14D02573211AFCDB00BE0D15 /* View */,
+			);
+			path = "Hall(购票大厅)";
+			sourceTree = "<group>";
+		};
+		14D02571211AFCDB00BE0D15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14D02572211AFCDB00BE0D15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14D02573211AFCDB00BE0D15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14D02574211AFCDB00BE0D15 /* MyLottery(我的彩票) */ = {
+			isa = PBXGroup;
+			children = (
+				14D02575211AFCDB00BE0D15 /* Controller */,
+				14D02576211AFCDB00BE0D15 /* Model */,
+				14D02577211AFCDB00BE0D15 /* View */,
+			);
+			path = "MyLottery(我的彩票)";
+			sourceTree = "<group>";
+		};
+		14D02575211AFCDB00BE0D15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14D02576211AFCDB00BE0D15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14D02577211AFCDB00BE0D15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14D02578211AFCDB00BE0D15 /* Arena(竞技场) */ = {
+			isa = PBXGroup;
+			children = (
+				14D02579211AFCDB00BE0D15 /* Controller */,
+				14D0257A211AFCDB00BE0D15 /* Model */,
+				14D0257B211AFCDB00BE0D15 /* View */,
+			);
+			path = "Arena(竞技场)";
+			sourceTree = "<group>";
+		};
+		14D02579211AFCDB00BE0D15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14D0257A211AFCDB00BE0D15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14D0257B211AFCDB00BE0D15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14D0257C211AFCDB00BE0D15 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				14D0251F211AD96A00BE0D15 /* AppDelegate.swift */,
+				14D0252B211AD96B00BE0D15 /* Info.plist */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		14D0257D211AFCDB00BE0D15 /* Discover(发现) */ = {
+			isa = PBXGroup;
+			children = (
+				14D0257E211AFCDB00BE0D15 /* Controller */,
+				14D0257F211AFCDB00BE0D15 /* Model */,
+				14D02580211AFCDB00BE0D15 /* View */,
+			);
+			path = "Discover(发现)";
+			sourceTree = "<group>";
+		};
+		14D0257E211AFCDB00BE0D15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14D0257F211AFCDB00BE0D15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14D02580211AFCDB00BE0D15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14D02581211AFCDB00BE0D15 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				14D02582211AFCDB00BE0D15 /* Controller */,
+				14D02583211AFCDB00BE0D15 /* Model */,
+				14D02584211AFCDB00BE0D15 /* View */,
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		14D02582211AFCDB00BE0D15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14D02583211AFCDB00BE0D15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14D02584211AFCDB00BE0D15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14D02585211AFCDB00BE0D15 /* History(开奖信息) */ = {
+			isa = PBXGroup;
+			children = (
+				14D02586211AFCDB00BE0D15 /* Controller */,
+				14D02587211AFCDB00BE0D15 /* Model */,
+				14D02588211AFCDB00BE0D15 /* View */,
+			);
+			path = "History(开奖信息)";
+			sourceTree = "<group>";
+		};
+		14D02586211AFCDB00BE0D15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14D02587211AFCDB00BE0D15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14D02588211AFCDB00BE0D15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14D02589211AFCDB00BE0D15 /* Extension+Tools(扩展工具) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Extension+Tools(扩展工具)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34QWHERWW4;
-				INFOPLIST_FILE = caipiaoSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/caipiaoSwift/Classes/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -285,7 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34QWHERWW4;
-				INFOPLIST_FILE = caipiaoSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/caipiaoSwift/Classes/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

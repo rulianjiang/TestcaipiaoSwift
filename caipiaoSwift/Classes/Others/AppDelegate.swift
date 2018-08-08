@@ -20,9 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         //2.设置窗口的根控制器
+        //2.1.创建根控制器.
         let tabBarVc = UITabBarController()
         window?.rootViewController = tabBarVc
         
+        //2.2添加子控制器.
+        let vc1 = UIViewController()
+        vc1.view.backgroundColor = UIColor.orange
+        tabBarVc.addChildViewController(vc1)
+        
+        let vc2 = UIViewController()
+        vc2.view.backgroundColor = UIColor.white
+        tabBarVc.addChildViewController(vc2)
         
         //3.让窗口可见.
         window?.makeKeyAndVisible()
