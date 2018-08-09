@@ -86,27 +86,27 @@ extension ZXMTabBarViewController {
         let hall = ZXMHallTableViewController()
         hall.view.backgroundColor  = UIColor.orange
         
-        setupOneChildViewController(vc: hall, image: UIImage(named: "TabBar_LotteryHall_new")!, selImage: UIImage(named: "TabBar_LotteryHall_selected_new")!)
+        setupOneChildViewController(vc: hall, image: UIImage(named: "TabBar_LotteryHall_new")!, selImage: UIImage(named: "TabBar_LotteryHall_selected_new")!, title: "购彩大厅")
         
         //2.竞技场
         let arena = ZXMArenaViewController()
         arena.view.backgroundColor  = UIColor.white
-        setupOneChildViewController(vc: arena, image: UIImage(named: "TabBar_Arena_new")!, selImage: UIImage(named: "TabBar_Arena_selected_new")!)
+        setupOneChildViewController(vc: arena, image: UIImage(named: "TabBar_Arena_new")!, selImage: UIImage(named: "TabBar_Arena_selected_new")!, title: nil)
         
         //3.发现
         let discover = ZXMDiscoverTableViewController()
         discover.view.backgroundColor  = UIColor.blue
-        setupOneChildViewController(vc: discover, image: UIImage(named: "TabBar_Discovery_new")!, selImage: UIImage(named: "TabBar_Discovery_selected_new")!)
+        setupOneChildViewController(vc: discover, image: UIImage(named: "TabBar_Discovery_new")!, selImage: UIImage(named: "TabBar_Discovery_selected_new")!, title: "发现")
         
         //4.开奖信息.
         let history = ZXMHistoryTableViewController()
         history.view.backgroundColor  = UIColor.red
-        setupOneChildViewController(vc: history, image: UIImage(named: "TabBar_History_new")!, selImage: UIImage(named: "TabBar_History_selected_new")!)
+        setupOneChildViewController(vc: history, image: UIImage(named: "TabBar_History_new")!, selImage: UIImage(named: "TabBar_History_selected_new")!, title: "开奖信息")
         
         //5.我的彩票.
         let myLottery = ZXMMyLotteryViewController()
         myLottery.view.backgroundColor  = UIColor.purple
-        setupOneChildViewController(vc: myLottery, image: UIImage(named: "TabBar_MyLottery_new")!, selImage: UIImage(named: "TabBar_MyLottery_selected_new")!)
+        setupOneChildViewController(vc: myLottery, image: UIImage(named: "TabBar_MyLottery_new")!, selImage: UIImage(named: "TabBar_MyLottery_selected_new")!, title: "我的彩票")
         
     }
     
@@ -116,13 +116,30 @@ extension ZXMTabBarViewController {
     ///   - vc: 传入的控制器
     ///   - image: 传入的正常图片.
     ///   - selImage: 出入的点击的时候的图片.
-    func setupOneChildViewController(vc:UIViewController,image:UIImage,selImage:UIImage)  {
+    ///   - title:出入的控制器的名字.
+    func setupOneChildViewController(vc:UIViewController,image:UIImage,selImage:UIImage,title:String?)  {
         
         let nav = UINavigationController(rootViewController: vc)
         
         //此时已经不能用vc添加控制了.
         // self.addChildViewController(vc)
+        vc.navigationItem.title = title
         self.addChildViewController(nav)
+        
+        //设置背景图片,forBarMetrics只能用默认模式.
+        //默认模式,控制器的尺寸是从nav下面开始的.
+        //如果用其他模式,会占据整个屏幕,也就是全屏
+        nav.navigationBar.setBackgroundImage(UIImage(named: "NavBar64"), for: UIBarMetrics.default)
+        
+        //设置字体颜色与大小.
+        let dictM = NSMutableDictionary()
+        //大小
+        dictM[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: 21)
+        dictM[NSAttributedStringKey.foregroundColor] = UIColor.white
+        //颜色
+        
+        nav.navigationBar.titleTextAttributes = dictM as? [NSAttributedStringKey : Any]
+        
         vc.tabBarItem.image = image
         vc.tabBarItem.selectedImage = selImage
         
