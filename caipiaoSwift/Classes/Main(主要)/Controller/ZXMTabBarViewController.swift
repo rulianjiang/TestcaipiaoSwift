@@ -9,12 +9,23 @@
 import UIKit
 
 class ZXMTabBarViewController: UITabBarController {
+    
+    /// 懒加载模型数组.方便把items的数据模型传递到自定义的tabBar里面.
+    lazy var items:NSMutableArray = {
+        let items = NSMutableArray()
+        return items
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        //1.添加子控制器.
         self.setupAllChildViewController()
+        
+        //2.自定义tabBar.
+        setupTabBar()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,8 +38,49 @@ class ZXMTabBarViewController: UITabBarController {
 
 extension ZXMTabBarViewController {
     
+    //MARK:自定义的tabBar.
+    
+    /// 添加自定义的tabBar.
+    func setupTabBar()  {
+        
+        //1.移除系统的tabBar.
+        //tabBar.removeFromSuperview()
+        //IOS11无法移除.只能隐藏.
+        self.tabBar.isHidden = true
+        
+        let zxmTabBar = ZXMTabBar()
+        //zxmTabBar.count = self.childViewControllers.count
+        zxmTabBar.frame = self.tabBar.frame
+        zxmTabBar.backgroundColor = UIColor.red
+        zxmTabBar.delegate = self
+        self.view.addSubview(zxmTabBar)
+        
+        
+        //2.添加自定义的tabBar.
+        //这里是自定义个tabBar等于系统的tabBar的frame.
+        //这里系统的tabBar并不销毁.
+        
+        zxmTabBar.items = self.items
+        
+
+        //1.自定义.
+        //1.1 继承uiview,自定义.
+        //1.2 用UIButton代替
+        //1.3 切换子控制器. selectedIndex
+    }
+    
     
     func setupAllChildViewController()  {
+        
+        /**
+         系统无法满足tabBar要求,解决方法.
+         1.自定义.
+         1.1 继承uiview,自定义.
+         1.2 用UIButton代替
+         1.3 切换子控制器. selectedIndex
+         
+         2.移除tabBar子控件..
+         */
         
         //1.购彩大厅
         let hall = ZXMHallTableViewController()
@@ -66,10 +118,30 @@ extension ZXMTabBarViewController {
     ///   - selImage: 出入的点击的时候的图片.
     func setupOneChildViewController(vc:UIViewController,image:UIImage,selImage:UIImage)  {
         
-        self.addChildViewController(vc)
+        let nav = UINavigationController(rootViewController: vc)
+        
+        //此时已经不能用vc添加控制了.
+        // self.addChildViewController(vc)
+        self.addChildViewController(nav)
         vc.tabBarItem.image = image
         vc.tabBarItem.selectedImage = selImage
+        
+        //添加items模型到数组.
+        self.items.add(vc.tabBarItem)
     }
+}
+
+//MARK:实现ZXMTabBarDelegate的代理协议方法.
+extension ZXMTabBarViewController:ZXMTabBarDelegate {
+    
+    func tabBar(tabBar: ZXMTabBar, index: Int) {
+        //print("选中的按钮是:\(index)")
+        
+        //切换子控制器.
+        self.selectedIndex = index
+        
+    }
+    
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145E725B211BEC9C002DB871 /* ZXMTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E725A211BEC9C002DB871 /* ZXMTabBarButton.swift */; };
 		14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0251F211AD96A00BE0D15 /* AppDelegate.swift */; };
 		14D02527211AD96B00BE0D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D02526211AD96B00BE0D15 /* Assets.xcassets */; };
 		14D0252A211AD96B00BE0D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D02528211AD96B00BE0D15 /* LaunchScreen.storyboard */; };
@@ -16,9 +17,11 @@
 		14D0259D211B066200BE0D15 /* ZXMDiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0259C211B066200BE0D15 /* ZXMDiscoverTableViewController.swift */; };
 		14D025A2211B06B000BE0D15 /* ZXMHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D025A1211B06B000BE0D15 /* ZXMHistoryTableViewController.swift */; };
 		14D025A4211B070200BE0D15 /* ZXMMyLotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D025A3211B070200BE0D15 /* ZXMMyLotteryViewController.swift */; };
+		14D025AC211B391400BE0D15 /* ZXMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D025AB211B391400BE0D15 /* ZXMTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		145E725A211BEC9C002DB871 /* ZXMTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMTabBarButton.swift; sourceTree = "<group>"; };
 		14D0251C211AD96A00BE0D15 /* caipiaoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caipiaoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D0251F211AD96A00BE0D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14D02526211AD96B00BE0D15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		14D0259C211B066200BE0D15 /* ZXMDiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMDiscoverTableViewController.swift; sourceTree = "<group>"; };
 		14D025A1211B06B000BE0D15 /* ZXMHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMHistoryTableViewController.swift; sourceTree = "<group>"; };
 		14D025A3211B070200BE0D15 /* ZXMMyLotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMMyLotteryViewController.swift; sourceTree = "<group>"; };
+		14D025AB211B391400BE0D15 /* ZXMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,8 @@
 		14D02584211AFCDB00BE0D15 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14D025AB211B391400BE0D15 /* ZXMTabBar.swift */,
+				145E725A211BEC9C002DB871 /* ZXMTabBarButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,9 +371,11 @@
 			files = (
 				14D025A2211B06B000BE0D15 /* ZXMHistoryTableViewController.swift in Sources */,
 				14D02598211B060B00BE0D15 /* ZXMArenaViewController.swift in Sources */,
+				145E725B211BEC9C002DB871 /* ZXMTabBarButton.swift in Sources */,
 				14D025A4211B070200BE0D15 /* ZXMMyLotteryViewController.swift in Sources */,
 				14D0258E211B044300BE0D15 /* ZXMTabBarViewController.swift in Sources */,
 				14D0259D211B066200BE0D15 /* ZXMDiscoverTableViewController.swift in Sources */,
+				14D025AC211B391400BE0D15 /* ZXMTabBar.swift in Sources */,
 				14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */,
 				14D02593211B05B500BE0D15 /* ZXMHallTableViewController.swift in Sources */,
 			);
