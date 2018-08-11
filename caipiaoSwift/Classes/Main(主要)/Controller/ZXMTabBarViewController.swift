@@ -90,7 +90,7 @@ extension ZXMTabBarViewController {
         
         //2.竞技场
         let arena = ZXMArenaViewController()
-        arena.view.backgroundColor  = UIColor.white
+        arena.view.backgroundColor  = UIColor.darkGray
         setupOneChildViewController(vc: arena, image: UIImage(named: "TabBar_Arena_new")!, selImage: UIImage(named: "TabBar_Arena_selected_new")!, title: nil)
         
         //3.发现
@@ -118,8 +118,18 @@ extension ZXMTabBarViewController {
     ///   - selImage: 出入的点击的时候的图片.
     ///   - title:出入的控制器的名字.
     func setupOneChildViewController(vc:UIViewController,image:UIImage,selImage:UIImage,title:String?)  {
+    
+        var nav = UINavigationController()
+        //判断导航导航条不同的种类,设置不同的导航条背景色.
         
-        let nav = ZXMNavigationViewController(rootViewController: vc)
+        if vc.isKind(of: ZXMArenaViewController.self) {
+            //代表是竞技场的类.用默认的导航控制器.
+          nav = UINavigationController(rootViewController: vc)
+        } else {
+            //其他的类用定制的导航控制器.
+           nav = ZXMNavigationViewController(rootViewController: vc)
+        }
+        
         
         //此时已经不能用vc添加控制了.
         // self.addChildViewController(vc)

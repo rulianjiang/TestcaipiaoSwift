@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZXMPopMenu" customModule="caipiaoSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="g" translatesAutoresizingMaskIntoConstraints="NO" id="fdv-UB-dBk">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIc-kg-S5V">
+                    <rect key="frame" x="221" y="5" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="0Ad-zc-pDD"/>
+                        <constraint firstAttribute="height" constant="24" id="lua-yd-px7"/>
+                    </constraints>
+                    <state key="normal" image="close"/>
+                    <connections>
+                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="2BW-Iu-RZG"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RIc-kg-S5V" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="Bjw-14-Kxc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fdv-UB-dBk" secondAttribute="bottom" id="EPJ-nU-lAz"/>
+                <constraint firstItem="fdv-UB-dBk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Fyn-ZS-A9U"/>
+                <constraint firstItem="fdv-UB-dBk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="V9Q-R5-Sux"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fdv-UB-dBk" secondAttribute="trailing" id="neI-Ff-4iC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RIc-kg-S5V" secondAttribute="trailing" constant="5" id="r5L-4x-4tY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close" width="24" height="24"/>
+        <image name="g" width="256" height="256"/>
+    </resources>
+</document>

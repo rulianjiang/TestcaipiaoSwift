@@ -9,20 +9,32 @@
 import UIKit
 
 class ZXMHallTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //1.设置导航栏左侧按钮.
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.imageWithRenderingModeOriginalName(name: "CS50_activity_image") , style: .plain, target: self, action: #selector(leftButtonOnClick))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+   /// 左侧按钮点击事件
+   @objc func leftButtonOnClick()  {
+    //1.弹出蒙版.占据整个屏幕,不允许用户交互.
+    ZXMCover.show()
+    
+    
+    //2.添加popMenu.
+    //添加到主窗口上面.
+    let popMenu = ZXMPopMenu.showInCenter(center: self.view.center)
+    popMenu.delegate = self
+    
     }
 
     // MARK: - Table view data source
@@ -37,59 +49,22 @@ class ZXMHallTableViewController: UITableViewController {
         return 0
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+}
 
-        // Configure the cell...
+// MARK: - 实现ZXMPopMenuDelegate协议方法.
 
-        return cell
+extension ZXMHallTableViewController:ZXMPopMenuDelegate {
+   
+    func popMenuDidCloseBtn(popMenu: ZXMPopMenu) {
+        // print("协议方法被执行..")
+        
+        //1.隐藏popMenu.
+        popMenu.hideInCenter(center: CGPoint(x: 44, y: 44))
+        
+        //2.移除蒙版.
+        ZXMCover.hide()
+        //当动画执行完成以后,移除蒙版.
+        //block可以保持一端代码.在需要的时候调用
+        
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

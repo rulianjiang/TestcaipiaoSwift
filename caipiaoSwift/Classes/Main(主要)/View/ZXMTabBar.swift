@@ -79,8 +79,8 @@ class ZXMTabBar: UIView {
     self.selButton = button
     
     //4.通过外界,切换子控制器.
-    //判断代理是否是先该方法.
-    //与OC的写法不同
+    //判断代理是否执行该方法.
+    //Swift协议协议OC的写法不同
     delegate?.tabBar(tabBar: self, index: button.tag)
     
     }

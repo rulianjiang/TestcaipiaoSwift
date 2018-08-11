@@ -56,3 +56,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+//MARK:让UINavigationBar执行一次的方法.
+extension UIApplication {
+    private static let runOnce: Void = {
+        ZXMNavigationViewController.setupUI()
+    }()
+    
+    override open var next: UIResponder? {
+        // Called before applicationDidFinishLaunching
+        UIApplication.runOnce
+        return super.next
+    }
+}
+
+extension UIApplication:ZXMNavigationViewControllerDelegate {
+    static func awake() {
+        
+    }
+    
+    
+}
+

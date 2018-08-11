@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ZXMNavigationViewController: UINavigationController {
+//只是运行一次的解决方法.
+protocol ZXMNavigationViewControllerDelegate {
+    static func awake()
+}
 
+
+class ZXMNavigationViewController: UINavigationController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        self.setupUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,12 +27,19 @@ class ZXMNavigationViewController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setupUI()  {
+  static func setupUI()  {
+    
+       // print("执行了...哈哈...")
         
         //设置背景图片,forBarMetrics只能用默认模式.
         //默认模式,控制器的尺寸是从nav下面开始的.
         //如果用其他模式,会占据整个屏幕,也就是全屏
-        self.navigationBar.setBackgroundImage(UIImage(named: "NavBar64"), for: UIBarMetrics.default)
+    
+        //1.获取导航条标识.获取app所有的跳行条标志.
+        //appearances 是一个协议.只要遵守这个协议.都有这个方法.
+        //let bar = UINavigationBar.appearance()
+        let bar = UINavigationBar.appearance(whenContainedInInstancesOf: [ZXMNavigationViewController.self])
+        bar.setBackgroundImage(UIImage(named: "NavBar64"), for: UIBarMetrics.default)
         
         //设置字体颜色与大小.
         let dictM = NSMutableDictionary()
@@ -35,11 +47,10 @@ class ZXMNavigationViewController: UINavigationController {
         dictM[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: 21)
         dictM[NSAttributedStringKey.foregroundColor] = UIColor.white
         //颜色
-        self.navigationBar.titleTextAttributes = dictM as? [NSAttributedStringKey : Any]
+        bar.titleTextAttributes = dictM as? [NSAttributedStringKey : Any]
         
     }
     
-
-  
-
 }
+
+
