@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias MyBlock = ()->()
+
 /// ZXMPopMenu协议
 protocol ZXMPopMenuDelegate {
     
@@ -62,28 +64,60 @@ class ZXMPopMenu: UIView {
     }
    
     
-    func hideInCenter(center:CGPoint) {
-        //点击关闭按钮.popMenu慢慢缩小.边平移,缩小到一定的尺寸.移除蒙版.
+    
+    
+//    func hideInCenter(center:CGPoint,comletion:MyBlock) {
+//        //点击关闭按钮.popMenu慢慢缩小.边平移,缩小到一定的尺寸.移除蒙版.
+//
+//        UIView.animate(withDuration: 0.5, animations: {
+//            //这个方案有问题.
+//            //self.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+//            //self.setNeedsDisplay()
+//
+//            //解决方案.
+//            //缩小方法.
+//            self.center = CGPoint(x: 40, y: 40)//随意的点.
+//            self.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+//
+//        }) { (finished) in
+//            //动画完成以后.
+//            //1.移除自己.
+//            self.removeFromSuperview()
+//            //2.移除蒙版.
+//            //ZXMCover.hide()
+//
+//        }
+//
+//
+//    }
+    
+    func hideInCenter(center:CGPoint,comletion:@escaping MyBlock)  {
+                //点击关闭按钮.popMenu慢慢缩小.边平移,缩小到一定的尺寸.移除蒙版.
+                UIView.animate(withDuration: 0.5, animations: {
+                    //这个方案有问题.
+                    //self.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+                    //self.setNeedsDisplay()
         
-        UIView.animate(withDuration: 0.5, animations: {
-            //这个方案有问题.
-            //self.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-            //self.setNeedsDisplay()
-            
-            //解决方案.
-            //缩小方法.
-            self.center = CGPoint(x: 40, y: 40)//随意的点.
-            self.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-            
-        }) { (finished) in
-            //动画完成以后.
-            //1.移除自己.
-            self.removeFromSuperview()
-            //2.移除蒙版.
-            //ZXMCover.hide()
-            
-        }
+                    //解决方案.
+                    //缩小方法.
+                    self.center = CGPoint(x: 40, y: 40)//随意的点.
+                    self.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
         
-       
+                }) { (finished) in
+                    //动画完成以后.
+                    //1.移除自己.
+                    self.removeFromSuperview()
+                    
+                    //2.移除蒙版.
+                    comletion()
+                
+                }
     }
+    
+    
+    
+    
+    
+    
+    
 }

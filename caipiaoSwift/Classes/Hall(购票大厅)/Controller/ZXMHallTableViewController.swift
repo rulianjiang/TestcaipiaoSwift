@@ -35,6 +35,8 @@ class ZXMHallTableViewController: UITableViewController {
     let popMenu = ZXMPopMenu.showInCenter(center: self.view.center)
     popMenu.delegate = self
     
+  
+    
     }
 
     // MARK: - Table view data source
@@ -58,13 +60,16 @@ extension ZXMHallTableViewController:ZXMPopMenuDelegate {
     func popMenuDidCloseBtn(popMenu: ZXMPopMenu) {
         // print("协议方法被执行..")
         
-        //1.隐藏popMenu.
-        popMenu.hideInCenter(center: CGPoint(x: 44, y: 44))
+        //1.隐藏popMenu. () - ()
+        popMenu.hideInCenter(center: CGPoint(x: 44, y: 44), comletion:
+            { () -> ()  in
+                //闭包代码.
+                //2.移除蒙版.
+                ZXMCover.hide()
+                //当动画执行完成以后,移除蒙版.
+                //block可以保持一端代码.在需要的时候调用
+        })
         
-        //2.移除蒙版.
-        ZXMCover.hide()
-        //当动画执行完成以后,移除蒙版.
-        //block可以保持一端代码.在需要的时候调用
         
     }
 }

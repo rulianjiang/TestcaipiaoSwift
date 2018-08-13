@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142A017A2121AA7D0095FC20 /* ZXMMyLotteryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */; };
 		1446DA01211DBD9F000829D0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */; };
 		1446DA06211DC732000829D0 /* ZXMCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA05211DC732000829D0 /* ZXMCover.swift */; };
 		1446DA0A211DD75D000829D0 /* ZXMPopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1446DA09211DD75D000829D0 /* ZXMPopMenu.xib */; };
@@ -23,9 +24,11 @@
 		14D025A2211B06B000BE0D15 /* ZXMHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D025A1211B06B000BE0D15 /* ZXMHistoryTableViewController.swift */; };
 		14D025A4211B070200BE0D15 /* ZXMMyLotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D025A3211B070200BE0D15 /* ZXMMyLotteryViewController.swift */; };
 		14D025AC211B391400BE0D15 /* ZXMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D025AB211B391400BE0D15 /* ZXMTabBar.swift */; };
+		14E345D821207AC1008C0A1E /* UIview+Frame+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E345D721207AC1008C0A1E /* UIview+Frame+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMMyLotteryViewController.xib; sourceTree = "<group>"; };
 		1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		1446DA05211DC732000829D0 /* ZXMCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMCover.swift; sourceTree = "<group>"; };
 		1446DA09211DD75D000829D0 /* ZXMPopMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMPopMenu.xib; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		14D025A1211B06B000BE0D15 /* ZXMHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMHistoryTableViewController.swift; sourceTree = "<group>"; };
 		14D025A3211B070200BE0D15 /* ZXMMyLotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMMyLotteryViewController.swift; sourceTree = "<group>"; };
 		14D025AB211B391400BE0D15 /* ZXMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMTabBar.swift; sourceTree = "<group>"; };
+		14E345D721207AC1008C0A1E /* UIview+Frame+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIview+Frame+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 		14D02577211AFCDB00BE0D15 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */,
+				14E345D721207AC1008C0A1E /* UIview+Frame+Extension.swift */,
 			);
 			path = "Extension+Tools(扩展工具)";
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 			files = (
 				14D0252A211AD96B00BE0D15 /* LaunchScreen.storyboard in Resources */,
 				14D02527211AD96B00BE0D15 /* Assets.xcassets in Resources */,
+				142A017A2121AA7D0095FC20 /* ZXMMyLotteryViewController.xib in Resources */,
 				1446DA0A211DD75D000829D0 /* ZXMPopMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +402,7 @@
 				145E7260211C7D53002DB871 /* ZXMNavigationViewController.swift in Sources */,
 				14D025AC211B391400BE0D15 /* ZXMTabBar.swift in Sources */,
 				14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */,
+				14E345D821207AC1008C0A1E /* UIview+Frame+Extension.swift in Sources */,
 				1446DA01211DBD9F000829D0 /* UIImage+Extension.swift in Sources */,
 				14D02593211B05B500BE0D15 /* ZXMHallTableViewController.swift in Sources */,
 				1446DA06211DC732000829D0 /* ZXMCover.swift in Sources */,
