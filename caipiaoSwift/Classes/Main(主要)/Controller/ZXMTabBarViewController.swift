@@ -105,7 +105,7 @@ extension ZXMTabBarViewController {
         
         //5.我的彩票.
         let myLottery = ZXMMyLotteryViewController()
-        myLottery.view.backgroundColor  = UIColor.purple
+        //myLottery.view.backgroundColor  = UIColor.purple
         setupOneChildViewController(vc: myLottery, image: UIImage(named: "TabBar_MyLottery_new")!, selImage: UIImage(named: "TabBar_MyLottery_selected_new")!, title: "我的彩票")
         
     }
