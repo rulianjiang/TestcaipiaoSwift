@@ -14,6 +14,7 @@
 		1446DA0F211DE66F000829D0 /* ZXMPopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA0E211DE66F000829D0 /* ZXMPopMenu.swift */; };
 		145E725B211BEC9C002DB871 /* ZXMTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E725A211BEC9C002DB871 /* ZXMTabBarButton.swift */; };
 		145E7260211C7D53002DB871 /* ZXMNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E725F211C7D53002DB871 /* ZXMNavigationViewController.swift */; };
+		146687752122FD7000117D76 /* ZXMArenaNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146687742122FD7000117D76 /* ZXMArenaNavViewController.swift */; };
 		14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0251F211AD96A00BE0D15 /* AppDelegate.swift */; };
 		14D02527211AD96B00BE0D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D02526211AD96B00BE0D15 /* Assets.xcassets */; };
 		14D0252A211AD96B00BE0D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D02528211AD96B00BE0D15 /* LaunchScreen.storyboard */; };
@@ -35,6 +36,7 @@
 		1446DA0E211DE66F000829D0 /* ZXMPopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMPopMenu.swift; sourceTree = "<group>"; };
 		145E725A211BEC9C002DB871 /* ZXMTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMTabBarButton.swift; sourceTree = "<group>"; };
 		145E725F211C7D53002DB871 /* ZXMNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMNavigationViewController.swift; sourceTree = "<group>"; };
+		146687742122FD7000117D76 /* ZXMArenaNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMArenaNavViewController.swift; sourceTree = "<group>"; };
 		14D0251C211AD96A00BE0D15 /* caipiaoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caipiaoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D0251F211AD96A00BE0D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14D02526211AD96B00BE0D15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				14D02597211B060B00BE0D15 /* ZXMArenaViewController.swift */,
+				146687742122FD7000117D76 /* ZXMArenaNavViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				14D025A4211B070200BE0D15 /* ZXMMyLotteryViewController.swift in Sources */,
 				14D0258E211B044300BE0D15 /* ZXMTabBarViewController.swift in Sources */,
 				14D0259D211B066200BE0D15 /* ZXMDiscoverTableViewController.swift in Sources */,
+				146687752122FD7000117D76 /* ZXMArenaNavViewController.swift in Sources */,
 				145E7260211C7D53002DB871 /* ZXMNavigationViewController.swift in Sources */,
 				14D025AC211B391400BE0D15 /* ZXMTabBar.swift in Sources */,
 				14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */,

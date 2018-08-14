@@ -57,10 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
-//MARK:让UINavigationBar执行一次的方法.
+//MARK:让UINavigationBar,ZXMArenaNavViewController执行一次的方法.
 extension UIApplication {
     private static let runOnce: Void = {
         ZXMNavigationViewController.setupUI()
+        ZXMArenaNavViewController.navsSetupUI()
     }()
     
     override open var next: UIResponder? {
@@ -70,11 +71,18 @@ extension UIApplication {
     }
 }
 
-extension UIApplication:ZXMNavigationViewControllerDelegate {
+extension UIApplication:ZXMNavigationViewControllerDelegate,ZXMArenaViewControllerDelegate {
     static func awake() {
         
     }
     
+    static func navAwake() {
+        
+    }
     
 }
+
+
+
+
 

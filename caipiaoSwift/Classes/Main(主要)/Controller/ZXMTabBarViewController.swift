@@ -124,7 +124,7 @@ extension ZXMTabBarViewController {
         
         if vc.isKind(of: ZXMArenaViewController.self) {
             //代表是竞技场的类.用默认的导航控制器.
-          nav = UINavigationController(rootViewController: vc)
+          nav = ZXMArenaNavViewController(rootViewController: vc)
         } else {
             //其他的类用定制的导航控制器.
            nav = ZXMNavigationViewController(rootViewController: vc)

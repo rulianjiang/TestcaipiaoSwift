@@ -33,6 +33,16 @@ extension UIImage {
         let newImage = image.stretchableImage(withLeftCapWidth: Int(image.size.width * 0.5), topCapHeight: Int(image.size.height * 0.5))
         return newImage
     }
+    
+    /// 传入一张图片,返回拉升后的图片.
+    ///
+    /// - Parameters:
+    ///   - image:传入原始图片
+    /// - Returns: 拉升后图片
+    class func imageWithStretImage(image:UIImage) -> UIImage {
+        let newImage = image.stretchableImage(withLeftCapWidth: Int(image.size.width * 0.5), topCapHeight: Int(image.size.height * 0.5))
+        return newImage
+    }
 }
 
 
