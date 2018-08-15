@@ -29,7 +29,7 @@ class ZXMTitleViewButton: UIButton {
         super.layoutSubviews()
         
         //这里会调用2次
-        print("调整button按钮位置")
+        //print("调整button按钮位置")
         
         if (self.imageView?.frame.origin.x)! < (self.titleLabel?.frame.origin.x)!  {
             //说明是此一次.
@@ -45,4 +45,14 @@ class ZXMTitleViewButton: UIButton {
     }
 
 
+    override func setTitle(_ title: String?, for state: UIControlState) {
+        super.setTitle(title, for: state)
+        self.sizeToFit()
+        
+    }
+    
+    override func setImage(_ image: UIImage?, for state: UIControlState) {
+        super.setImage(image, for: state)
+        self.sizeToFit()
+    }
 }

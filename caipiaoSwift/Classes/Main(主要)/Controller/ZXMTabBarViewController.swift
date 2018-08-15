@@ -32,6 +32,36 @@ class ZXMTabBarViewController: UITabBarController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //移除tabBar的子控件.
+        
+        for view in self.tabBar.subviews {
+            //print("所有控件为:\(view)")
+            //判断当前的控件是否是ZXMTabBar.如果不是,直接移除.
+            if !view.isKind(of: ZXMTabBar.self) {
+                view.removeFromSuperview()
+            }
+        }
+        
+    }
+    
+    //需要再次移除一下,不然会出问题.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //移除tabBar的子控件.
+        for view in self.tabBar.subviews {
+            //print("所有控件为:\(view)")
+            //判断当前的控件是否是ZXMTabBar.如果不是,直接移除.
+            if !view.isKind(of: ZXMTabBar.self) {
+                view.removeFromSuperview()
+            }
+        }
+        
+        
+    }
 
 
 }
@@ -46,14 +76,18 @@ extension ZXMTabBarViewController {
         //1.移除系统的tabBar.
         //tabBar.removeFromSuperview()
         //IOS11无法移除.只能隐藏.
-        self.tabBar.isHidden = true
+        //self.tabBar.isHidden = true
         
         let zxmTabBar = ZXMTabBar()
         //zxmTabBar.count = self.childViewControllers.count
-        zxmTabBar.frame = self.tabBar.frame
+        //这里不能用frame,不然就跑下面去了,需要改为bounds
+        //zxmTabBar.frame = self.tabBar.frame
+        zxmTabBar.frame = self.tabBar.bounds
         zxmTabBar.backgroundColor = UIColor.red
         zxmTabBar.delegate = self
-        self.view.addSubview(zxmTabBar)
+        //这里不能添加到view上, 添加到tabbar上面.
+        //self.view.addSubview(zxmTabBar)
+        self.tabBar.addSubview(zxmTabBar)
         
         
         //2.添加自定义的tabBar.

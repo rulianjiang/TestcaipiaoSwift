@@ -204,7 +204,7 @@
         <!--Buy View Controller-->
         <scene sceneID="ukN-bw-VT7">
             <objects>
-                <viewController id="CTn-0d-nF6" customClass="ZXMBuyViewController" customModule="caipiaoSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="CTn-0d-nF6" customClass="ZXMBuyViewController" customModule="caipiaoSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ySc-D6-6sx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
