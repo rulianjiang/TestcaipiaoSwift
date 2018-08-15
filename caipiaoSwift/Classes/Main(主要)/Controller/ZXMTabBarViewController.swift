@@ -94,9 +94,20 @@ extension ZXMTabBarViewController {
         setupOneChildViewController(vc: arena, image: UIImage(named: "TabBar_Arena_new")!, selImage: UIImage(named: "TabBar_Arena_selected_new")!, title: nil)
         
         //3.发现
-        let discover = ZXMDiscoverTableViewController()
-        discover.view.backgroundColor  = UIColor.blue
-        setupOneChildViewController(vc: discover, image: UIImage(named: "TabBar_Discovery_new")!, selImage: UIImage(named: "TabBar_Discovery_selected_new")!, title: "发现")
+        //用stroyboard加载.
+        //3.1 加载StoryBoard.
+        let stroyboard = UIStoryboard(name: "ZXMDiscoverTableViewController", bundle: nil)
+        
+        //3.2 初始化箭头指向的控制器.
+        //因此需要在storybord中加入箭头所指.
+        
+        let discover =  stroyboard.instantiateInitialViewController()
+        
+        //代码加载.
+        //let discover = ZXMDiscoverTableViewController()
+        
+        //discover?.view.backgroundColor  = UIColor.blue
+        setupOneChildViewController(vc: discover!, image: UIImage(named: "TabBar_Discovery_new")!, selImage: UIImage(named: "TabBar_Discovery_selected_new")!, title: "发现")
         
         //4.开奖信息.
         let history = ZXMHistoryTableViewController()

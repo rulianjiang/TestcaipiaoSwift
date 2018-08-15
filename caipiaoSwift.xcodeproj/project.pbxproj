@@ -15,6 +15,7 @@
 		145E725B211BEC9C002DB871 /* ZXMTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E725A211BEC9C002DB871 /* ZXMTabBarButton.swift */; };
 		145E7260211C7D53002DB871 /* ZXMNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E725F211C7D53002DB871 /* ZXMNavigationViewController.swift */; };
 		146687752122FD7000117D76 /* ZXMArenaNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146687742122FD7000117D76 /* ZXMArenaNavViewController.swift */; };
+		1491ED292124062400405932 /* ZXMDiscoverTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1491ED282124062400405932 /* ZXMDiscoverTableViewController.storyboard */; };
 		14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0251F211AD96A00BE0D15 /* AppDelegate.swift */; };
 		14D02527211AD96B00BE0D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D02526211AD96B00BE0D15 /* Assets.xcassets */; };
 		14D0252A211AD96B00BE0D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D02528211AD96B00BE0D15 /* LaunchScreen.storyboard */; };
@@ -37,6 +38,7 @@
 		145E725A211BEC9C002DB871 /* ZXMTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMTabBarButton.swift; sourceTree = "<group>"; };
 		145E725F211C7D53002DB871 /* ZXMNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMNavigationViewController.swift; sourceTree = "<group>"; };
 		146687742122FD7000117D76 /* ZXMArenaNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMArenaNavViewController.swift; sourceTree = "<group>"; };
+		1491ED282124062400405932 /* ZXMDiscoverTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZXMDiscoverTableViewController.storyboard; sourceTree = "<group>"; };
 		14D0251C211AD96A00BE0D15 /* caipiaoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caipiaoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D0251F211AD96A00BE0D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14D02526211AD96B00BE0D15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		14D02580211AFCDB00BE0D15 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1491ED282124062400405932 /* ZXMDiscoverTableViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				14D02527211AD96B00BE0D15 /* Assets.xcassets in Resources */,
 				142A017A2121AA7D0095FC20 /* ZXMMyLotteryViewController.xib in Resources */,
 				1446DA0A211DD75D000829D0 /* ZXMPopMenu.xib in Resources */,
+				1491ED292124062400405932 /* ZXMDiscoverTableViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
