@@ -10,6 +10,11 @@ import UIKit
 
 class ZXMTabBarViewController: UITabBarController {
     
+//    lazy var zxmTabBar:ZXMTabBar = {
+//        let zxmTabBar = ZXMTabBar()
+//        return zxmTabBar
+//    }()
+    
     /// 懒加载模型数组.方便把items的数据模型传递到自定义的tabBar里面.
     lazy var items:NSMutableArray = {
         let items = NSMutableArray()
@@ -24,6 +29,8 @@ class ZXMTabBarViewController: UITabBarController {
         
         //2.自定义tabBar.
         setupTabBar()
+        
+
         
         
     }
@@ -46,6 +53,8 @@ class ZXMTabBarViewController: UITabBarController {
                 view.removeFromSuperview()
             }
         }
+        
+        
         
     }
     
@@ -87,6 +96,7 @@ extension ZXMTabBarViewController {
         zxmTabBar.frame = self.tabBar.bounds
         zxmTabBar.backgroundColor = UIColor.red
         zxmTabBar.delegate = self
+        
         //这里不能添加到view上, 添加到tabbar上面.
         //self.view.addSubview(zxmTabBar)
         self.tabBar.addSubview(zxmTabBar)

@@ -32,7 +32,63 @@ class ZXMNavigationViewController: UINavigationController,UINavigationController
         //当是根控制的时候,还原代理.如果是非根控制器,清空代理.
         self.delegate = self
         
+        //全屏滑动移除控制器
+        //1.新先修改系统的手势.系统没有提供属性.无解.
+        
+        //2.只能自己添加手势.
+//        let pan = UIPanGestureRecognizer(target: self, action: nil)
+//        self.view.addGestureRecognizer(pan)
+        
+        //print("全局手势:\(self.interactivePopGestureRecognizer)")
+        //UIScreenEdgePanGestureRecognizer: 0x7fa71641caf0; state = Possible; delaysTouchesBegan = YES; view = <UILayoutContainerView 0x7fa71641a2d0>; target= <(action=handleNavigationTransition:, target=<_UINavigationInteractiveTransition 0x7fa71641c9b0
+        
+        //缺Target 系统的私有属性.
+        //KVC [get valueForKeyPath:""];
+        //不知道Target真实类型
+        //oc runtime机制只能动态获取当前类的成员属性.不能获取其子类或者父类的属性.
+        //__unsafe_unretained cls 要获取哪一个类的成员属性.
+        
+        //OC的方法.
+        //unsigned int * _Nullable outCount 要获取Class下面的所有成员属性的个数.
+//        unsigned int outCount = 0;
+//        Ivar *ivars = class_copyIvarList([UIGestureRecognizer class], &outCount);
+//
+//        for (int i = 0; i < outCount; i++) {
+//            NSString *name = @(ivar_getName(ivars[i]));
+//            NSLog(@"%@",name);
+//        }
+        
+        //利用运行时动态拿到系统的侧滑手势 action + target  手动创建一个全屏的pan手势，响应事件用系统的
+        //拿到interactivePopGestureRecognizer这个对象里面全部的属性
+        //        var count:UInt32 = 0
+        //        let ivars = class_copyIvarList(UIGestureRecognizer.self, &count)!
+        //        for i in 0..<count {
+        //             //拿到ivar指针
+        //            let nameP = ivar_getName(ivars[Int(i)])
+        //            //根据指针找到对应的属性的字符串
+        //            let name = String(cString: nameP!)
+        //            print(name)
+        //        }
+        guard  let targets = interactivePopGestureRecognizer?.value(forKey: "_targets") as?[AnyObject] else {
+            return
+        }
+        //拿到 action=handleNavigationTransition:, target=<_UINavigationInteractiveTransition 0x7ff515c0dc80>
+        
+        let dict = targets[0]
+        //拿到action
+        let target = dict.value(forKey: "target") as Any
+        //通过字典无法拿到action，这里通过Selector方法包装action
+        let action = Selector(("handleNavigationTransition:"))
+        
+        //拿到target action 创建pan手势并添加到全屏view上
+        let gesture = UIPanGestureRecognizer(target: target, action: action)
+        view.addGestureRecognizer(gesture)
+        
+        
     }
+    
+   
+    
     
     //重写系统的方法.设置返回按钮.
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -49,6 +105,7 @@ class ZXMNavigationViewController: UINavigationController,UINavigationController
     /// 返回按钮监听事件
        @objc func back()  {
         self.popViewController(animated: true)
+       
     
         }
 
