@@ -21,6 +21,24 @@ class ZXMNavigationViewController: UINavigationController {
 
         
     }
+    
+    //重写系统的方法.设置返回按钮.
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        super.pushViewController(viewController, animated: animated)
+        //print("控制器为:\(viewController)")
+        
+        if self.viewControllers.count > 1 {
+            //非根控制器,设置导航条左侧返回按钮.
+            //如果在导航控制器统一设置返回按钮.就没有滑动返回的功能.
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.imageWithRenderingModeOriginalName(name: "NavBack"), style: .plain, target: self, action: #selector(back))
+        }
+    }
+    
+    /// 返回按钮监听事件
+       @objc func back()  {
+        self.popViewController(animated: true)
+    
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

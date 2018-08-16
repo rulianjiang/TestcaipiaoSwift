@@ -22,14 +22,14 @@ class ZXMBuyViewController: UIViewController {
         
         //2.设置左侧返回按钮.
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.imageWithRenderingModeOriginalName(name: "NavBack"), style: .plain, target: self, action: #selector(back))
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.imageWithRenderingModeOriginalName(name: "NavBack"), style: .plain, target: self, action: #selector(back))
     }
     
    /// 返回按钮监听事件
-   @objc func back()  {
-    self.navigationController?.popViewController(animated: true)
-        
-    }
+//   @objc func back()  {
+//    self.navigationController?.popViewController(animated: true)
+//        
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
