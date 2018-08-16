@@ -14,11 +14,23 @@ protocol ZXMNavigationViewControllerDelegate {
 }
 
 
-class ZXMNavigationViewController: UINavigationController {
+class ZXMNavigationViewController: UINavigationController,UINavigationControllerDelegate,UIGestureRecognizerDelegate {
+    
+    /// 手势代理
+    var popGesture:UIGestureRecognizerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //想统一设置返回按钮,滑动移除控制.
+        //清空手势代理就嫩实现滑动.
+        //self.interactivePopGestureRecognizer?.delegate = nil
+        
+        //记录手势代理
+        self.popGesture = self.interactivePopGestureRecognizer?.delegate
+        
+        //当是根控制的时候,还原代理.如果是非根控制器,清空代理.
+        self.delegate = self
         
     }
     
@@ -69,6 +81,22 @@ class ZXMNavigationViewController: UINavigationController {
         
     }
     
+    //MARK: 实现代理方法.
+    
+    //当控制器显示完毕的时候调用.
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        //print("控制器为:\(viewController)")
+        
+        //判断根控制器.
+        //先进后出,所以第0个就是根控制器.
+        if self.viewControllers[0] == viewController {
+            //根控制器还原代理
+            self.popGesture = self.interactivePopGestureRecognizer?.delegate
+        } else {
+            //非根控制器,清空代理
+            self.interactivePopGestureRecognizer?.delegate = nil
+        }
+    }
 }
 
 
