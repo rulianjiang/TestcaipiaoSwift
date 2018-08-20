@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //print(currentVersion)
 
         //获取上一次的版本号.如果没有值,就为空
-        let lastVersion:String = UserDefaults.standard.object(forKey: zxmVersion) as? String ?? ""
+        //let lastVersion:String = UserDefaults.standard.object(forKey: zxmVersion) as? String ?? ""
+        
+        let lastVersion:String = ZXMSaveTool.object(forKey: zxmVersion) as? String ?? ""
+        
         
         //设置根控制器
         var rootVc = UIViewController()
@@ -42,10 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //rootVc.view.backgroundColor = UIColor.orange
 
             //存储当前版本号
-            UserDefaults.standard.set(currentVersion, forKey: zxmVersion)
+            //UserDefaults.standard.set(currentVersion, forKey: zxmVersion)
+            ZXMSaveTool.set(currentVersion, forKey: zxmVersion)
 
             //强制存储
-            UserDefaults.standard.synchronize()
+            //UserDefaults.standard.synchronize()
 
         } else {
             //进入主框架.

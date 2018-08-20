@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140A63AE212B16510017A085 /* ZXMSaveTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A63AD212B16510017A085 /* ZXMSaveTool.swift */; };
 		142A017A2121AA7D0095FC20 /* ZXMMyLotteryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */; };
 		1446DA01211DBD9F000829D0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */; };
 		1446DA06211DC732000829D0 /* ZXMCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA05211DC732000829D0 /* ZXMCover.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140A63AD212B16510017A085 /* ZXMSaveTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMSaveTool.swift; sourceTree = "<group>"; };
 		142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMMyLotteryViewController.xib; sourceTree = "<group>"; };
 		1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		1446DA05211DC732000829D0 /* ZXMCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMCover.swift; sourceTree = "<group>"; };
@@ -73,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		140A63A7212B15670017A085 /* Tool[业务逻辑] */ = {
+			isa = PBXGroup;
+			children = (
+				140A63A9212B15F60017A085 /* SaveTool */,
+			);
+			path = "Tool[业务逻辑]";
+			sourceTree = "<group>";
+		};
+		140A63A9212B15F60017A085 /* SaveTool */ = {
+			isa = PBXGroup;
+			children = (
+				140A63AD212B16510017A085 /* ZXMSaveTool.swift */,
+			);
+			path = SaveTool;
+			sourceTree = "<group>";
+		};
 		14D02513211AD96A00BE0D15 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +120,7 @@
 		14D0256F211AFCDB00BE0D15 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				140A63A7212B15670017A085 /* Tool[业务逻辑] */,
 				14D44445212723FE000355AB /* NewFeature[新特性] */,
 				14D02589211AFCDB00BE0D15 /* Extension+Tools(扩展工具) */,
 				14D0257C211AFCDB00BE0D15 /* Others */,
@@ -443,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140A63AE212B16510017A085 /* ZXMSaveTool.swift in Sources */,
 				14D4444D2127262F000355AB /* ZXMNewFeatureCollectionViewController.swift in Sources */,
 				14D025A2211B06B000BE0D15 /* ZXMHistoryTableViewController.swift in Sources */,
 				1446DA0F211DE66F000829D0 /* ZXMPopMenu.swift in Sources */,
