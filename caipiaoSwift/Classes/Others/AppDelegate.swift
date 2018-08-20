@@ -13,61 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    /// 版本号
-    let zxmVersion = "version"
-    
-    //var lastVersion:String = "0.0"
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //1.创建窗口
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        //当有新版本更新的时候,或者第一次安装的时候,显示新特性界面.
-        //1.获取当前版本号.
-        let currentVersion:String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-        //print(currentVersion)
-
-        //获取上一次的版本号.如果没有值,就为空
-        //let lastVersion:String = UserDefaults.standard.object(forKey: zxmVersion) as? String ?? ""
         
-        let lastVersion:String = ZXMSaveTool.object(forKey: zxmVersion) as? String ?? ""
-        
-        
-        //设置根控制器
-        var rootVc = UIViewController()
-
-        //版本判断
-        if currentVersion != lastVersion {
-            //进入新界面
-            rootVc = ZXMNewFeatureCollectionViewController()
-            //rootVc.view.backgroundColor = UIColor.orange
-
-            //存储当前版本号
-            //UserDefaults.standard.set(currentVersion, forKey: zxmVersion)
-            ZXMSaveTool.set(currentVersion, forKey: zxmVersion)
-
-            //强制存储
-            //UserDefaults.standard.synchronize()
-
-        } else {
-            //进入主框架.
-            rootVc = ZXMTabBarViewController()
-
-        }
-        
-        //let layout = UICollectionViewFlowLayout()
-        
-        //let rootVc = UICollectionViewController(collectionViewLayout: layout)
-        
-        //let rootVc = ZXMNewFeatureCollectionViewController()
         
         //2.设置窗口的根控制器
         //2.1.创建根控制器.
         //let tabBarVc = ZXMTabBarViewController()
         //window?.rootViewController = tabBarVc
-        window?.rootViewController = rootVc
+        //window?.rootViewController = rootVc
+        window?.rootViewController = ZXMRootVC.chooseWindowRootVC()
+        
+        
         
         //3.让窗口可见.
         window?.makeKeyAndVisible()

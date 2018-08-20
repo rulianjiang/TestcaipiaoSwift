@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		140A63AE212B16510017A085 /* ZXMSaveTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A63AD212B16510017A085 /* ZXMSaveTool.swift */; };
+		140A63B5212B24260017A085 /* ZXMRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A63B4212B24260017A085 /* ZXMRootVC.swift */; };
 		142A017A2121AA7D0095FC20 /* ZXMMyLotteryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */; };
 		1446DA01211DBD9F000829D0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */; };
 		1446DA06211DC732000829D0 /* ZXMCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA05211DC732000829D0 /* ZXMCover.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		140A63AD212B16510017A085 /* ZXMSaveTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMSaveTool.swift; sourceTree = "<group>"; };
+		140A63B4212B24260017A085 /* ZXMRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMRootVC.swift; sourceTree = "<group>"; };
 		142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMMyLotteryViewController.xib; sourceTree = "<group>"; };
 		1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		1446DA05211DC732000829D0 /* ZXMCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMCover.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		140A63A7212B15670017A085 /* Tool[业务逻辑] */ = {
 			isa = PBXGroup;
 			children = (
+				140A63AF212B23D40017A085 /* RootVC */,
 				140A63A9212B15F60017A085 /* SaveTool */,
 			);
 			path = "Tool[业务逻辑]";
@@ -89,6 +92,14 @@
 				140A63AD212B16510017A085 /* ZXMSaveTool.swift */,
 			);
 			path = SaveTool;
+			sourceTree = "<group>";
+		};
+		140A63AF212B23D40017A085 /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				140A63B4212B24260017A085 /* ZXMRootVC.swift */,
+			);
+			path = RootVC;
 			sourceTree = "<group>";
 		};
 		14D02513211AD96A00BE0D15 = {
@@ -476,6 +487,7 @@
 				145E7260211C7D53002DB871 /* ZXMNavigationViewController.swift in Sources */,
 				14D025AC211B391400BE0D15 /* ZXMTabBar.swift in Sources */,
 				14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */,
+				140A63B5212B24260017A085 /* ZXMRootVC.swift in Sources */,
 				14E345D821207AC1008C0A1E /* UIview+Frame+Extension.swift in Sources */,
 				1491ED3321243A6B00405932 /* ZXMTitleViewButton.swift in Sources */,
 				1446DA01211DBD9F000829D0 /* UIImage+Extension.swift in Sources */,
