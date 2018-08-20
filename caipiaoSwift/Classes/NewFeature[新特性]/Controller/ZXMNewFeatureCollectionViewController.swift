@@ -12,6 +12,9 @@ private let reuseIdentifier = "Cell"
 
 class ZXMNewFeatureCollectionViewController: UICollectionViewController {
     
+    /// 总的页数.
+    let pageCount:Int = 4
+    
     /// 上一次的偏移量.
     var lastOffsetX:CGFloat = 0
     
@@ -78,7 +81,7 @@ class ZXMNewFeatureCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return pageCount
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,6 +97,17 @@ class ZXMNewFeatureCollectionViewController: UICollectionViewController {
         //接收图片
         cell.image = image!
         
+        //    //最后一个cell.添加立即体验按钮.
+        //    if (indexPath.item == pageCount - 1) {
+        //        //最后一个cell
+        //    } else {
+        //        //不是最后一个cell
+        //        //隐藏立即体验按钮.
+        //
+        //    }
+        
+      cell.setIndexPath(indexPath: indexPath, count: pageCount)
+
         return cell;
     }
 
