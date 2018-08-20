@@ -33,31 +33,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let lastVersion:String = UserDefaults.standard.object(forKey: zxmVersion) as? String ?? ""
         
         //设置根控制器
-//        var rootVc = UIViewController()
-//
-//        //版本判断
-//        if currentVersion != lastVersion {
-//            //进入新界面
-//            rootVc = UIViewController()
-//            rootVc.view.backgroundColor = UIColor.orange
-//
-//            //存储当前版本号
-//            //UserDefaults.standard.set(currentVersion, forKey: zxmVersion)
-//
-//            //强制存储
-//           // UserDefaults.standard.synchronize()
-//
-//        } else {
-//            //进入主框架.
-//            rootVc = ZXMTabBarViewController()
-//
-//        }
+        var rootVc = UIViewController()
+
+        //版本判断
+        if currentVersion != lastVersion {
+            //进入新界面
+            rootVc = ZXMNewFeatureCollectionViewController()
+            //rootVc.view.backgroundColor = UIColor.orange
+
+            //存储当前版本号
+            UserDefaults.standard.set(currentVersion, forKey: zxmVersion)
+
+            //强制存储
+            UserDefaults.standard.synchronize()
+
+        } else {
+            //进入主框架.
+            rootVc = ZXMTabBarViewController()
+
+        }
         
         //let layout = UICollectionViewFlowLayout()
         
         //let rootVc = UICollectionViewController(collectionViewLayout: layout)
         
-        let rootVc = ZXMNewFeatureCollectionViewController()
+        //let rootVc = ZXMNewFeatureCollectionViewController()
         
         //2.设置窗口的根控制器
         //2.1.创建根控制器.
