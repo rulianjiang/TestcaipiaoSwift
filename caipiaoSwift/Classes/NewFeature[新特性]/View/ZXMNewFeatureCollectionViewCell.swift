@@ -20,6 +20,8 @@ class ZXMNewFeatureCollectionViewCell: UICollectionViewCell {
         //startBtn.frame  = CGRect(x: 100, y: 100, width: 100, height: 100)
         startBtn.center = CGPoint(x: self.frame.size.width * 0.5, y: self.frame.size.height * 0.9)
         self.contentView.addSubview(startBtn)
+        //监听方法
+        startBtn.addTarget(self, action: #selector(buttonOnClick(button:)), for: UIControlEvents.touchUpInside)
         return startBtn
     }()
     
@@ -37,6 +39,7 @@ class ZXMNewFeatureCollectionViewCell: UICollectionViewCell {
         }
         
     }
+    
     
 
     /// 设置立体体验的方法.
@@ -57,4 +60,19 @@ class ZXMNewFeatureCollectionViewCell: UICollectionViewCell {
             }
     }
     
+   /// 点击立即体验监听按钮.
+   ///
+   /// - Parameter button: 传入的button.
+   @objc func buttonOnClick(button:UIButton) {
+    //切换界面
+    //方式:1.push(navgationcontroller导航控制器) 2.tabBar 3.modal(控件不行,必须要控制器).
+    //在cell中不能modal,通过代理,让控制器modal.
+    //谁Modal出来的控制器,就会强引用这个控制器,因此这个新特性控制器还在.但是这个只用一次,因此没有必要再占用内存.
+    //因此不能用Modal
+    //想要新特性控制器销毁.
+    //切换窗口的根控制器.
+    let tabBarVC = ZXMTabBarViewController()
+    UIApplication.shared.keyWindow?.rootViewController = tabBarVC
+    
+    }
 }
