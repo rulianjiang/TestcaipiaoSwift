@@ -10,7 +10,6 @@ import UIKit
 
 class ZXMMyLotteryViewController: UIViewController {
     
-    
     @IBOutlet weak var loginBtn: UIButton!
     
     override func viewDidLoad() {
@@ -53,7 +52,18 @@ class ZXMMyLotteryViewController: UIViewController {
     
   /// 导航栏右侧点击按钮监听事件.
   @objc func config()  {
-        //print("右侧按钮")
+    
+        let settingVC = ZXMSettingTableViewController()
+        settingVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(settingVC, animated: true)
     }
 
 }
+
+
+
+
+
+
+
+

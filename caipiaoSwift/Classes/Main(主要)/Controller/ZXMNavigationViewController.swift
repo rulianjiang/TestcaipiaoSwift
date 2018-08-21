@@ -92,6 +92,12 @@ class ZXMNavigationViewController: UINavigationController,UINavigationController
     
     //重写系统的方法.设置返回按钮.
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        
+        if self.viewControllers.count != 0 {
+            self.navigationController?.hidesBottomBarWhenPushed = true
+        }
+        
+        
         super.pushViewController(viewController, animated: animated)
         //print("控制器为:\(viewController)")
         
