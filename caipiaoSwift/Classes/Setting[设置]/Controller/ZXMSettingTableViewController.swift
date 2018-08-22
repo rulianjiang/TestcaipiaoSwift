@@ -38,6 +38,25 @@ class ZXMSettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //添加分组.
+        self.setupGroup0()
+        self.setupGroup1()
+        self.setupGroup2()
+        
+        //注册cell
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+}
+
+extension ZXMSettingTableViewController {
+    
+    func setupGroup0()  {
         //注意,第一个items1可以不用NSMutableArray(),目的是方便查看.
         
         //第0组.
@@ -46,7 +65,9 @@ class ZXMSettingTableViewController: UITableViewController {
         items1.add(item)
         //将行模型数组添加到数组总数中.
         self.groups.add(items1)
-        
+    }
+    
+    func setupGroup1()  {
         //第1组.
         let item11 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
         self.items.add(item11)
@@ -64,7 +85,9 @@ class ZXMSettingTableViewController: UITableViewController {
         
         //将行模型数组添加到数组总数中.
         self.groups.add(items2)
-        
+    }
+    
+    func setupGroup2()  {
         //第2组.
         let item21 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "检查新版本")
         self.items.add(item21)
@@ -82,18 +105,9 @@ class ZXMSettingTableViewController: UITableViewController {
         
         //将行模型数组添加到数组总数中.
         self.groups.add(items3)
-        
-        
-        //注册cell
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+    
 }
 
 extension ZXMSettingTableViewController {
