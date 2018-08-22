@@ -63,8 +63,12 @@ extension ZXMSettingTableViewController {
         let items1 = NSMutableArray()
         let item =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "使用兑换码")
         items1.add(item)
+        
+        let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "优惠券相关", footerTitle: nil, items: items1)
+        
         //将行模型数组添加到数组总数中.
-        self.groups.add(items1)
+        //self.groups.add(items1)
+        self.groups.add(group)
     }
     
     func setupGroup1()  {
@@ -83,8 +87,11 @@ extension ZXMSettingTableViewController {
         let items2 = [item11,item12,item13,item14];
         //self.items.add(items2)
         
+        let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "提醒相关", footerTitle: nil, items: items2 as NSArray)
+        
         //将行模型数组添加到数组总数中.
-        self.groups.add(items2)
+        //self.groups.add(items2)
+         self.groups.add(group)
     }
     
     func setupGroup2()  {
@@ -102,11 +109,12 @@ extension ZXMSettingTableViewController {
         //self.items.add(item24)
         
         let items3 = [item21,item22,item23,item24];
+        let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "版本相关", footerTitle: nil, items: items3 as NSArray)
         
         //将行模型数组添加到数组总数中.
-        self.groups.add(items3)
+        //self.groups.add(items3)
+        self.groups.add(group)
     }
-    
     
 }
 
@@ -128,9 +136,12 @@ extension ZXMSettingTableViewController {
 //        }
         
         //1.取出行模型数组
-        let items:NSArray = self.groups[section] as! NSArray
+        //let items:NSArray = self.groups[section] as! NSArray
         
-        return items.count
+        //return items.count
+        
+        let group = self.groups[section] as! ZXMSettingGroup
+        return (group.items?.count)!
     
     }
     
@@ -138,10 +149,12 @@ extension ZXMSettingTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
         //1.取出行模型数组
-        let items:NSArray = self.groups[indexPath.section] as! NSArray
+        //let items:NSArray = self.groups[indexPath.section] as! NSArray
+        let group = self.groups[indexPath.section] as! ZXMSettingGroup
         
         //取出数据模型
-        let item = items[indexPath.row] as! ZXMSettingItem
+        //let item = items[indexPath.row] as! ZXMSettingItem
+        let item = group.items![indexPath.row] as! ZXMSettingItem
         
         //设置数据
         cell.imageView?.image = item.icon
@@ -186,15 +199,23 @@ extension ZXMSettingTableViewController {
 //        }
         
         
-        
-        
-        
-        
-        
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if section == 0 {
+//            return "优惠券相关"
+//        } else if section == 1 {
+//            return "提醒相关"
+//        } else {
+//            return "版本相关"
+//        }
+        
+        let group = self.groups[section] as! ZXMSettingGroup
+        return group.headerTitle
+        
+        
+    }
     
     
     

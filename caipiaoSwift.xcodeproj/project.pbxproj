@@ -22,6 +22,7 @@
 		1491ED2E212434FF00405932 /* ZXMBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491ED2D212434FF00405932 /* ZXMBuyViewController.swift */; };
 		1491ED3321243A6B00405932 /* ZXMTitleViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1491ED3221243A6B00405932 /* ZXMTitleViewButton.swift */; };
 		14C13C6A212D800900FBB344 /* ZXMSettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C13C69212D800900FBB344 /* ZXMSettingItem.swift */; };
+		14C13C6F212DB25E00FBB344 /* ZXMSettingGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C13C6E212DB25E00FBB344 /* ZXMSettingGroup.swift */; };
 		14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0251F211AD96A00BE0D15 /* AppDelegate.swift */; };
 		14D02527211AD96B00BE0D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D02526211AD96B00BE0D15 /* Assets.xcassets */; };
 		14D0252A211AD96B00BE0D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D02528211AD96B00BE0D15 /* LaunchScreen.storyboard */; };
@@ -53,6 +54,7 @@
 		1491ED2D212434FF00405932 /* ZXMBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMBuyViewController.swift; sourceTree = "<group>"; };
 		1491ED3221243A6B00405932 /* ZXMTitleViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMTitleViewButton.swift; sourceTree = "<group>"; };
 		14C13C69212D800900FBB344 /* ZXMSettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMSettingItem.swift; sourceTree = "<group>"; };
+		14C13C6E212DB25E00FBB344 /* ZXMSettingGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMSettingGroup.swift; sourceTree = "<group>"; };
 		14D0251C211AD96A00BE0D15 /* caipiaoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caipiaoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D0251F211AD96A00BE0D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14D02526211AD96B00BE0D15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				14C13C69212D800900FBB344 /* ZXMSettingItem.swift */,
+				14C13C6E212DB25E00FBB344 /* ZXMSettingGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				140A63B5212B24260017A085 /* ZXMRootVC.swift in Sources */,
 				14E345D821207AC1008C0A1E /* UIview+Frame+Extension.swift in Sources */,
 				1491ED3321243A6B00405932 /* ZXMTitleViewButton.swift in Sources */,
+				14C13C6F212DB25E00FBB344 /* ZXMSettingGroup.swift in Sources */,
 				1446DA01211DBD9F000829D0 /* UIImage+Extension.swift in Sources */,
 				14D02593211B05B500BE0D15 /* ZXMHallTableViewController.swift in Sources */,
 				14EA701A21284FF200791EAF /* ZXMNewFeatureCollectionViewCell.swift in Sources */,
