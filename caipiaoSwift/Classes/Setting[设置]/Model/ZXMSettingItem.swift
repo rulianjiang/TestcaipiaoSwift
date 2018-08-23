@@ -8,6 +8,17 @@
 
 import UIKit
 
+/// 右边按钮枚举类型.
+///
+/// - NO: 没有
+/// - Arrow: 箭头
+/// - Switch: 滑块.
+enum ZXMSettingItemRightViewState {
+    case NO
+    case Arrow
+    case Switch
+}
+
 /// 设置界面的模型.
 class ZXMSettingItem: NSObject {
     
@@ -16,6 +27,9 @@ class ZXMSettingItem: NSObject {
     
     /// 标题
     var title:String?
+    
+    /// 右边类型.
+    var type:ZXMSettingItemRightViewState?
     
     /// 创建Item的类方法.
     ///

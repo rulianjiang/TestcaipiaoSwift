@@ -62,6 +62,7 @@ extension ZXMSettingTableViewController {
         //第0组.
         let items1 = NSMutableArray()
         let item =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "使用兑换码")
+        item.type = ZXMSettingItemRightViewState.Arrow
         items1.add(item)
         
         let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "优惠券相关", footerTitle: nil, items: items1)
@@ -74,9 +75,11 @@ extension ZXMSettingTableViewController {
     func setupGroup1()  {
         //第1组.
         let item11 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
+        item11.type = ZXMSettingItemRightViewState.Arrow
         self.items.add(item11)
         
         let item12 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
+        item12.type = ZXMSettingItemRightViewState.Switch
         self.items.add(item12)
         
         let item13 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
@@ -159,6 +162,16 @@ extension ZXMSettingTableViewController {
         //设置数据
         cell.imageView?.image = item.icon
         cell.textLabel?.text = item.title
+        
+        
+        //判断类型,设置不同的类型.
+        if item.type == ZXMSettingItemRightViewState.Arrow {
+            cell.accessoryView = UIImageView(image: UIImage(named: "arrow_right"))
+        } else if item.type == ZXMSettingItemRightViewState.Switch {
+            cell.accessoryView = UISwitch()
+        } else {
+            cell.accessoryView = nil
+        }
         
         //搭建界面.
 //        if indexPath.section == 0 && indexPath.row == 0 {
