@@ -80,6 +80,7 @@ extension ZXMSettingTableViewController {
         
         let item12 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
         item12.type = ZXMSettingItemRightViewState.Switch
+        item12.on = true
         self.items.add(item12)
         
         let item13 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
@@ -168,7 +169,9 @@ extension ZXMSettingTableViewController {
         if item.type == ZXMSettingItemRightViewState.Arrow {
             cell.accessoryView = UIImageView(image: UIImage(named: "arrow_right"))
         } else if item.type == ZXMSettingItemRightViewState.Switch {
-            cell.accessoryView = UISwitch()
+            let sw = UISwitch()
+            cell.accessoryView = sw
+            sw.isOn = item.isOn
         } else {
             cell.accessoryView = nil
         }

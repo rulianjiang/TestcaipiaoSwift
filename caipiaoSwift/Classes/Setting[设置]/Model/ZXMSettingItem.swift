@@ -28,6 +28,29 @@ class ZXMSettingItem: NSObject {
     /// 标题
     var title:String?
     
+    var on:Bool = false
+    
+    ///开关状态.
+    var isOn:Bool {
+        get {
+            return on
+        }
+        set {
+            on = newValue
+        }
+        
+    }
+    
+    
+//    var name: String? {
+//        get {
+//            return _name
+//        }
+//        set {
+//            _name = newValue
+//        }
+//    }
+    
     /// 右边类型.
     var type:ZXMSettingItemRightViewState?
     
