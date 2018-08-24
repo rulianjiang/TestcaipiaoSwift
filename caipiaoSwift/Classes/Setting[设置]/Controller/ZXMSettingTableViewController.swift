@@ -38,13 +38,16 @@ class ZXMSettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //设置头部标题
+        self.navigationItem.title = "设置"
+        
         //添加分组.
         self.setupGroup0()
         self.setupGroup1()
         self.setupGroup2()
         
         //注册cell
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(ZXMSettingTableViewCell.self, forCellReuseIdentifier: cellID)
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,120 +124,34 @@ extension ZXMSettingTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        if section == 0 {
-//            return 1
-//        } else {
-//            return 4
-//        }
-        
-        //1.取出行模型数组
-        //let items:NSArray = self.groups[section] as! NSArray
-        
-        //return items.count
-        
         let group = self.groups[section] as! ZXMSettingGroup
         return (group.items?.count)!
     
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! ZXMSettingTableViewCell
         
         //1.取出行模型数组
-        //let items:NSArray = self.groups[indexPath.section] as! NSArray
         let group = self.groups[indexPath.section] as! ZXMSettingGroup
         
-        //取出数据模型
-        //let item = items[indexPath.row] as! ZXMSettingItem
+        //2.取出数据模型
         let item = group.items![indexPath.row] as! ZXMSettingItem
         
-        //设置数据
-        cell.imageView?.image = item.icon
-        cell.textLabel?.text = item.title
-        
-        //设置左侧视图.
-        if item.isKind(of: ZXMSettingArrowItem.self) {
-            //代表是箭头的类.
-            //右侧视图是箭头
-            cell.accessoryView = UIImageView(image: UIImage(named: "arrow_right"))
-        }else if item.isKind(of: ZXMSettingSwitchItem.self) {
-            //右侧是视图开关
-            //需要强制类型转换
-            let swItem = item as! ZXMSettingSwitchItem
-            let sw = UISwitch()
-            cell.accessoryView = sw
-            sw.isOn = swItem.isOn
-        }
-        
-        
-        //判断类型,设置不同的类型.
-//        if item.type == ZXMSettingItemRightViewState.Arrow {
-//            cell.accessoryView = UIImageView(image: UIImage(named: "arrow_right"))
-//        } else if item.type == ZXMSettingItemRightViewState.Switch {
-//            let sw = UISwitch()
-//            cell.accessoryView = sw
-//            sw.isOn = item.isOn
-//        } else {
-//            cell.accessoryView = nil
-//        }
-        
-        //搭建界面.
-//        if indexPath.section == 0 && indexPath.row == 0 {
-//            //第0组
-//            cell.imageView?.image = UIImage(named: "RedeemCode")
-//            cell.textLabel?.text = "使用兑换码"
-//        } else  if (indexPath.section == 1) {
-//            //第一组.
-//            if indexPath.row == 0 {
-//                cell.imageView?.image = UIImage(named: "RedeemCode")
-//                cell.textLabel?.text = "推送提醒"
-//            } else if indexPath.row == 1 {
-//                cell.imageView?.image = UIImage(named: "RedeemCode")
-//                cell.textLabel?.text = "使用摇一摇"
-//            }else if indexPath.row == 2 {
-//                cell.imageView?.image = UIImage(named: "RedeemCode")
-//                cell.textLabel?.text = "声音效果"
-//            } else if indexPath.row == 3 {
-//                cell.imageView?.image = UIImage(named: "RedeemCode")
-//                cell.textLabel?.text = "购彩小助手"
-//            }
-//            
-//        } else  if (indexPath.section == 2) {
-//            //第二组.
-//            if indexPath.row == 0 {
-//                cell.imageView?.image = UIImage(named: "RedeemCode")
-//                cell.textLabel?.text = "检查新版本"
-//            } else if indexPath.row == 1 {
-//                cell.imageView?.image = UIImage(named: "RedeemCode")
-//                cell.textLabel?.text = "分享"
-//            }else if indexPath.row == 2 {
-//                cell.imageView?.image = UIImage(named: "RedeemCode")
-//                cell.textLabel?.text = "产品推荐"
-//            } else if indexPath.row == 3 {
-//                cell.imageView?.image = UIImage(named: "RedeemCode")
-//                cell.textLabel?.text = "关于"
-//            }
-//        }
-        
+        //3.传递数据
+        cell.item = item
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if section == 0 {
-//            return "优惠券相关"
-//        } else if section == 1 {
-//            return "提醒相关"
-//        } else {
-//            return "版本相关"
-//        }
-        
+
         let group = self.groups[section] as! ZXMSettingGroup
         return group.headerTitle
         
         
     }
-    
     
     
 }

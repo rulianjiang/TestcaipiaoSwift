@@ -11,6 +11,7 @@
 		140A63AE212B16510017A085 /* ZXMSaveTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A63AD212B16510017A085 /* ZXMSaveTool.swift */; };
 		140A63B5212B24260017A085 /* ZXMRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A63B4212B24260017A085 /* ZXMRootVC.swift */; };
 		142A017A2121AA7D0095FC20 /* ZXMMyLotteryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */; };
+		143F3A6E21302C5000919936 /* ZXMSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143F3A6D21302C5000919936 /* ZXMSettingTableViewCell.swift */; };
 		1446DA01211DBD9F000829D0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */; };
 		1446DA06211DC732000829D0 /* ZXMCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446DA05211DC732000829D0 /* ZXMCover.swift */; };
 		1446DA0A211DD75D000829D0 /* ZXMPopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1446DA09211DD75D000829D0 /* ZXMPopMenu.xib */; };
@@ -45,6 +46,7 @@
 		140A63AD212B16510017A085 /* ZXMSaveTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMSaveTool.swift; sourceTree = "<group>"; };
 		140A63B4212B24260017A085 /* ZXMRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMRootVC.swift; sourceTree = "<group>"; };
 		142A01792121AA7D0095FC20 /* ZXMMyLotteryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMMyLotteryViewController.xib; sourceTree = "<group>"; };
+		143F3A6D21302C5000919936 /* ZXMSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMSettingTableViewCell.swift; sourceTree = "<group>"; };
 		1446DA00211DBD9F000829D0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		1446DA05211DC732000829D0 /* ZXMCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMCover.swift; sourceTree = "<group>"; };
 		1446DA09211DD75D000829D0 /* ZXMPopMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXMPopMenu.xib; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		1406EBCB212C535B00DE84A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				143F3A6D21302C5000919936 /* ZXMSettingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				14D02598211B060B00BE0D15 /* ZXMArenaViewController.swift in Sources */,
 				1491ED2E212434FF00405932 /* ZXMBuyViewController.swift in Sources */,
 				145E725B211BEC9C002DB871 /* ZXMTabBarButton.swift in Sources */,
+				143F3A6E21302C5000919936 /* ZXMSettingTableViewCell.swift in Sources */,
 				14D025A4211B070200BE0D15 /* ZXMMyLotteryViewController.swift in Sources */,
 				14CD5280212F0D220036D28C /* ZXMSettingSwitchItem.swift in Sources */,
 				14D0258E211B044300BE0D15 /* ZXMTabBarViewController.swift in Sources */,

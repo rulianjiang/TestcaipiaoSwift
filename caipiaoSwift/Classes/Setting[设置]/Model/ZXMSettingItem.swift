@@ -28,24 +28,8 @@ class ZXMSettingItem: NSObject {
     /// 标题
     var title:String?
     
-    /// 右边类型.
-    //var type:ZXMSettingItemRightViewState?
-    
-    /// 创建Item的类方法.
-    ///
-    /// - Parameters:
-    ///   - icon: 传入的图片.
-    ///   - title: 传入的title文字
-    /// - Returns: 返回界面模型Item.
-//    class func itemWithIcon(icon:UIImage,title:String) -> ZXMSettingItem {
-//
-//        let item = ZXMSettingItem()
-//        item.icon = icon
-//        item.title = title
-//        return item
-//    }
-    
-     /// 创建Item的构造方法方法
+
+     /// 创建Item的构造方法
      ///
      /// - Parameters:
      ///   - icon: 传入的图片.
@@ -55,6 +39,4 @@ class ZXMSettingItem: NSObject {
             self.title = title
         }
  
-    
-
 }
