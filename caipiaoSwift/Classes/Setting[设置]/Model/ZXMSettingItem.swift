@@ -13,11 +13,11 @@ import UIKit
 /// - NO: 没有
 /// - Arrow: 箭头
 /// - Switch: 滑块.
-enum ZXMSettingItemRightViewState {
-    case NO
-    case Arrow
-    case Switch
-}
+//enum ZXMSettingItemRightViewState {
+//    case NO
+//    case Arrow
+//    case Switch
+//}
 
 /// 设置界面的模型.
 class ZXMSettingItem: NSObject {
@@ -28,31 +28,8 @@ class ZXMSettingItem: NSObject {
     /// 标题
     var title:String?
     
-    var on:Bool = false
-    
-    ///开关状态.
-    var isOn:Bool {
-        get {
-            return on
-        }
-        set {
-            on = newValue
-        }
-        
-    }
-    
-    
-//    var name: String? {
-//        get {
-//            return _name
-//        }
-//        set {
-//            _name = newValue
-//        }
-//    }
-    
     /// 右边类型.
-    var type:ZXMSettingItemRightViewState?
+    //var type:ZXMSettingItemRightViewState?
     
     /// 创建Item的类方法.
     ///
@@ -60,13 +37,24 @@ class ZXMSettingItem: NSObject {
     ///   - icon: 传入的图片.
     ///   - title: 传入的title文字
     /// - Returns: 返回界面模型Item.
-    class func itemWithIcon(icon:UIImage,title:String) -> ZXMSettingItem {
-        
-        let item = ZXMSettingItem()
-        item.icon = icon
-        item.title = title
-        return item
-    }
+//    class func itemWithIcon(icon:UIImage,title:String) -> ZXMSettingItem {
+//
+//        let item = ZXMSettingItem()
+//        item.icon = icon
+//        item.title = title
+//        return item
+//    }
+    
+     /// 创建Item的构造方法方法
+     ///
+     /// - Parameters:
+     ///   - icon: 传入的图片.
+     ///   - title: 返回界面模型Item.
+     init(icon: UIImage?, title: String?) {
+            self.icon = icon
+            self.title = title
+        }
+ 
     
 
 }

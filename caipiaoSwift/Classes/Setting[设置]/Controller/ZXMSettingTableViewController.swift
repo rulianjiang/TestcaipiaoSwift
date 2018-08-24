@@ -61,65 +61,53 @@ extension ZXMSettingTableViewController {
         
         //第0组.
         let items1 = NSMutableArray()
-        let item =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "使用兑换码")
-        item.type = ZXMSettingItemRightViewState.Arrow
+        let item =  ZXMSettingArrowItem(icon: UIImage(named: "RedeemCode")!, title: "使用兑换码")
         items1.add(item)
         
         let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "优惠券相关", footerTitle: nil, items: items1)
         
-        //将行模型数组添加到数组总数中.
-        //self.groups.add(items1)
+        //将行模型数组添加到数组总数中
         self.groups.add(group)
     }
     
     func setupGroup1()  {
         //第1组.
-        let item11 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
-        item11.type = ZXMSettingItemRightViewState.Arrow
+
+        let item11 = ZXMSettingArrowItem(icon: UIImage(named: "MorePush")!, title: "推送提醒")
         self.items.add(item11)
-        
-        let item12 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
-        item12.type = ZXMSettingItemRightViewState.Switch
+
+        let item12 = ZXMSettingSwitchItem(icon: UIImage(named: "more_homeshake")!, title: "使用摇一摇选机")
         item12.on = true
         self.items.add(item12)
-        
-        let item13 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
+
+        let item13 =  ZXMSettingSwitchItem(icon: UIImage(named: "sound_Effect")!, title: "声音效果")
+        item13.on = false
         self.items.add(item13)
-        
-        let item14 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
-        
+
+        let item14 =  ZXMSettingSwitchItem(icon: UIImage(named: "More_LotteryRecommend")!, title: "购彩小助手")
         let items2 = [item11,item12,item13,item14];
-        //self.items.add(items2)
-        
+
         let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "提醒相关", footerTitle: nil, items: items2 as NSArray)
-        
+
         //将行模型数组添加到数组总数中.
-        //self.groups.add(items2)
          self.groups.add(group)
     }
     
     func setupGroup2()  {
         //第2组.
-        let item21 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "检查新版本")
-        self.items.add(item21)
+        let item21 = ZXMSettingArrowItem(icon: UIImage(named: "MoreUpdate")!, title: "检查新版本")
+        let item22 =  ZXMSettingArrowItem(icon: UIImage(named: "MoreShare")!, title: "分享")
+        let item23 =  ZXMSettingArrowItem(icon: UIImage(named: "MoreNetease")!, title: "产品推荐")
+        let item24 =  ZXMSettingArrowItem(icon: UIImage(named: "MoreAbout")!, title: "关于")
         
-        let item22 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
-        self.items.add(item22)
-        
-        let item23 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
-        self.items.add(item23)
-        
-        let item24 =  ZXMSettingItem.itemWithIcon(icon: UIImage(named: "RedeemCode")!, title: "推送提醒")
-        //self.items.add(item24)
-        
+
         let items3 = [item21,item22,item23,item24];
         let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "版本相关", footerTitle: nil, items: items3 as NSArray)
         
         //将行模型数组添加到数组总数中.
-        //self.groups.add(items3)
         self.groups.add(group)
-    }
-    
+   }
+
 }
 
 extension ZXMSettingTableViewController {
@@ -164,17 +152,31 @@ extension ZXMSettingTableViewController {
         cell.imageView?.image = item.icon
         cell.textLabel?.text = item.title
         
-        
-        //判断类型,设置不同的类型.
-        if item.type == ZXMSettingItemRightViewState.Arrow {
+        //设置左侧视图.
+        if item.isKind(of: ZXMSettingArrowItem.self) {
+            //代表是箭头的类.
+            //右侧视图是箭头
             cell.accessoryView = UIImageView(image: UIImage(named: "arrow_right"))
-        } else if item.type == ZXMSettingItemRightViewState.Switch {
+        }else if item.isKind(of: ZXMSettingSwitchItem.self) {
+            //右侧是视图开关
+            //需要强制类型转换
+            let swItem = item as! ZXMSettingSwitchItem
             let sw = UISwitch()
             cell.accessoryView = sw
-            sw.isOn = item.isOn
-        } else {
-            cell.accessoryView = nil
+            sw.isOn = swItem.isOn
         }
+        
+        
+        //判断类型,设置不同的类型.
+//        if item.type == ZXMSettingItemRightViewState.Arrow {
+//            cell.accessoryView = UIImageView(image: UIImage(named: "arrow_right"))
+//        } else if item.type == ZXMSettingItemRightViewState.Switch {
+//            let sw = UISwitch()
+//            cell.accessoryView = sw
+//            sw.isOn = item.isOn
+//        } else {
+//            cell.accessoryView = nil
+//        }
         
         //搭建界面.
 //        if indexPath.section == 0 && indexPath.row == 0 {

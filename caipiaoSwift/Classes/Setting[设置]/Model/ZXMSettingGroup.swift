@@ -12,10 +12,10 @@ import UIKit
 class ZXMSettingGroup: NSObject {
     
     /// 头部标题
-    var headerTitle:String?
+   var headerTitle:String?
     
     /// 尾部标题.
-    var footerTitle:String?
+   var footerTitle:String?
     
     /// 行模型数组
     var items:NSArray?
