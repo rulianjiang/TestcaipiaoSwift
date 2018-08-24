@@ -57,6 +57,8 @@ class ZXMSettingTableViewController: UITableViewController {
 
 }
 
+// MARK: - 设置组数据.
+
 extension ZXMSettingTableViewController {
     
     func setupGroup0()  {
@@ -65,6 +67,7 @@ extension ZXMSettingTableViewController {
         //第0组.
         let items1 = NSMutableArray()
         let item =  ZXMSettingArrowItem(icon: UIImage(named: "RedeemCode")!, title: "使用兑换码")
+        item.desVC = ZXMPushTableViewController.self
         items1.add(item)
         
         let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "优惠券相关", footerTitle: nil, items: items1)
@@ -113,9 +116,9 @@ extension ZXMSettingTableViewController {
 
 }
 
+// MARK: - 实现数据源方法.
 extension ZXMSettingTableViewController {
     
-    // MARK: - 实现数据源方法.
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -155,3 +158,40 @@ extension ZXMSettingTableViewController {
     
     
 }
+
+// MARK: - 实现代理源方法.
+extension ZXMSettingTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //1.取出组模型
+        let group =  self.groups[indexPath.section] as! ZXMSettingGroup
+        
+        //2.取出item.
+        let item = group.items![indexPath.row] as! ZXMSettingItem
+        
+        //3.判断Item类型,跳转控制
+        if item.isKind(of: ZXMSettingArrowItem.self) {
+            //箭头模型
+            let arrowItem  = item as! ZXMSettingArrowItem
+            
+            //有控制器的时候才跳转,用守护语句守护一下.
+            //用下面的语句直接会崩掉.
+            //let vcType = arrowItem.desVC as! UIViewController.Type
+            guard  let vcType = arrowItem.desVC as? UIViewController.Type else { return }
+            
+            let vc = vcType.init()
+            vc.title = item.title
+            //或者用下面的也可以!新版本不可以聊!
+            //vc.navigationController?.title = "测试"
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+
+
+
+
+
+
+
