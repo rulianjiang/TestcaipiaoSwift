@@ -162,6 +162,19 @@ extension ZXMSettingTableViewController {
 // MARK: - 实现代理源方法.
 extension ZXMSettingTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //取消选中状态.
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //点击检查版本的时候更新弹框.
+        if (indexPath.section == 2 && indexPath.row == 0) {
+            //第2组,第0行.
+            //弹框.swift未实现.
+            
+            return
+            
+        }
+        
+        
         //1.取出组模型
         let group =  self.groups[indexPath.section] as! ZXMSettingGroup
         
@@ -185,6 +198,8 @@ extension ZXMSettingTableViewController {
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        
+        
     }
 }
 
