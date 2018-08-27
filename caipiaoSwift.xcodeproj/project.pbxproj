@@ -40,6 +40,8 @@
 		14D4444D2127262F000355AB /* ZXMNewFeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4444C2127262F000355AB /* ZXMNewFeatureCollectionViewController.swift */; };
 		14E345D821207AC1008C0A1E /* UIview+Frame+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E345D721207AC1008C0A1E /* UIview+Frame+Extension.swift */; };
 		14EA701A21284FF200791EAF /* ZXMNewFeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA701921284FF200791EAF /* ZXMNewFeatureCollectionViewCell.swift */; };
+		14F13E552134304D00C308B3 /* ZXMScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F13E542134304D00C308B3 /* ZXMScoreTableViewController.swift */; };
+		14F13E5A2134322A00C308B3 /* ZXMBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F13E592134322A00C308B3 /* ZXMBaseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		14D4444C2127262F000355AB /* ZXMNewFeatureCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMNewFeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		14E345D721207AC1008C0A1E /* UIview+Frame+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIview+Frame+Extension.swift"; sourceTree = "<group>"; };
 		14EA701921284FF200791EAF /* ZXMNewFeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMNewFeatureCollectionViewCell.swift; sourceTree = "<group>"; };
+		14F13E542134304D00C308B3 /* ZXMScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMScoreTableViewController.swift; sourceTree = "<group>"; };
+		14F13E592134322A00C308B3 /* ZXMBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXMBaseTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			children = (
 				1406EBCF212C53D200DE84A1 /* ZXMSettingTableViewController.swift */,
 				143F3A7221305C1100919936 /* ZXMPushTableViewController.swift */,
+				14F13E542134304D00C308B3 /* ZXMScoreTableViewController.swift */,
+				14F13E592134322A00C308B3 /* ZXMBaseTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -536,11 +542,13 @@
 				145E725B211BEC9C002DB871 /* ZXMTabBarButton.swift in Sources */,
 				143F3A6E21302C5000919936 /* ZXMSettingTableViewCell.swift in Sources */,
 				14D025A4211B070200BE0D15 /* ZXMMyLotteryViewController.swift in Sources */,
+				14F13E552134304D00C308B3 /* ZXMScoreTableViewController.swift in Sources */,
 				143F3A7321305C1100919936 /* ZXMPushTableViewController.swift in Sources */,
 				14CD5280212F0D220036D28C /* ZXMSettingSwitchItem.swift in Sources */,
 				14D0258E211B044300BE0D15 /* ZXMTabBarViewController.swift in Sources */,
 				14D0259D211B066200BE0D15 /* ZXMDiscoverTableViewController.swift in Sources */,
 				146687752122FD7000117D76 /* ZXMArenaNavViewController.swift in Sources */,
+				14F13E5A2134322A00C308B3 /* ZXMBaseTableViewController.swift in Sources */,
 				145E7260211C7D53002DB871 /* ZXMNavigationViewController.swift in Sources */,
 				14D025AC211B391400BE0D15 /* ZXMTabBar.swift in Sources */,
 				14D02520211AD96A00BE0D15 /* AppDelegate.swift in Sources */,
