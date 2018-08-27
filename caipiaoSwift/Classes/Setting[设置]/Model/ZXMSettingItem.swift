@@ -31,6 +31,9 @@ class ZXMSettingItem: NSObject {
     /// 标题
     var title:String?
     
+    /// 子标题
+    var subTitle:String?
+    
     /// 点击这一行要做的事情:Block封装.
     //var  operationBlock: (() -> ())?
     //或者这样来

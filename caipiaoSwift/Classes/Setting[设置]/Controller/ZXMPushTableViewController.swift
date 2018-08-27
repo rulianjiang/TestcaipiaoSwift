@@ -17,7 +17,6 @@ class ZXMPushTableViewController: ZXMBaseTableViewController {
         //第0组.
         self.setupGroup0()
         
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,13 +36,15 @@ extension ZXMPushTableViewController {
      func setupGroup0()  {
         
         let item = ZXMSettingArrowItem(title: "开奖推送")
+        item.desVC = ZXMScoreTableViewController.self
+        
         let item1 = ZXMSettingArrowItem(title: "比分直播")
         let item2 = ZXMSettingArrowItem(title: "中奖动画")
         let item3 = ZXMSettingArrowItem(title: "彩购大厅")
         
         let items = [item,item1,item2,item3]
 
-        let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: nil, footerTitle: nil, items: items as NSArray)
+        let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: "推送时间", footerTitle: nil, items: items as NSArray)
         
         //将行模型数组添加到数组总数中
         self.groups.add(group)
