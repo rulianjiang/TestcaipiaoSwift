@@ -9,7 +9,7 @@
 import UIKit
 
 /// 箭头模型.
-@objcMembers class ZXMSettingArrowItem: ZXMSettingItem {
+class ZXMSettingArrowItem: ZXMSettingItem {
     
     /// 目标控制器
     var desVC:AnyClass?

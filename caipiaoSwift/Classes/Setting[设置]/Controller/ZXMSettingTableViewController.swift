@@ -54,6 +54,10 @@ class ZXMSettingTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    deinit {
+        print("循环引用解除!!!")
+    }
 
 }
 
@@ -80,7 +84,19 @@ extension ZXMSettingTableViewController {
         //第1组.
 
         let item11 = ZXMSettingArrowItem(icon: UIImage(named: "MorePush")!, title: "推送提醒")
+        item11.desVC = ZXMPushTableViewController.self
         self.items.add(item11)
+        
+        ////传递参数.[闭包直接可以传递参数.]
+        //闭包循环引用的解决.!
+        //[weak self] 和[unowned self] 的区别是 [weak self]处理的时候是一个可选类型。
+//        item11.operationBlock = { [weak self] in
+//            let vc = UIViewController()
+//            vc.title = "周兴明测试...."
+//            vc.view.backgroundColor = UIColor.purple
+//            self?.navigationController?.pushViewController(vc, animated: true)
+//
+//        }
 
         let item12 = ZXMSettingSwitchItem(icon: UIImage(named: "more_homeshake")!, title: "使用摇一摇选机")
         item12.on = true
@@ -102,6 +118,15 @@ extension ZXMSettingTableViewController {
     func setupGroup2()  {
         //第2组.
         let item21 = ZXMSettingArrowItem(icon: UIImage(named: "MoreUpdate")!, title: "检查新版本")
+        
+        //闭包循环引用的解决.!
+        //[weak self] 和[unowned self] 的区别是 [weak self]处理的时候是一个可选类型。
+        item21.operationBlock = { [weak self] in
+            self?.setupAler()
+            //print("检查新版本啊...!!!!")
+        }
+        
+        
         let item22 =  ZXMSettingArrowItem(icon: UIImage(named: "MoreShare")!, title: "分享")
         let item23 =  ZXMSettingArrowItem(icon: UIImage(named: "MoreNetease")!, title: "产品推荐")
         let item24 =  ZXMSettingArrowItem(icon: UIImage(named: "MoreAbout")!, title: "关于")
@@ -166,13 +191,13 @@ extension ZXMSettingTableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         //点击检查版本的时候更新弹框.
-        if (indexPath.section == 2 && indexPath.row == 0) {
-            //第2组,第0行.
-            //弹框.swift未实现.
-            
-            return
-            
-        }
+//        if (indexPath.section == 2 && indexPath.row == 0) {
+//            //第2组,第0行.
+//            //弹框.swift未实现.
+//
+//            return
+//
+//        }
         
         
         //1.取出组模型
@@ -181,22 +206,31 @@ extension ZXMSettingTableViewController {
         //2.取出item.
         let item = group.items![indexPath.row] as! ZXMSettingItem
         
-        //3.判断Item类型,跳转控制
-        if item.isKind(of: ZXMSettingArrowItem.self) {
-            //箭头模型
-            let arrowItem  = item as! ZXMSettingArrowItem
+        //做事情只能做一件.
+        if item.operationBlock != nil {
             
-            //有控制器的时候才跳转,用守护语句守护一下.
-            //用下面的语句直接会崩掉.
-            //let vcType = arrowItem.desVC as! UIViewController.Type
-            guard  let vcType = arrowItem.desVC as? UIViewController.Type else { return }
+            item.operationBlock!()
+        } else {
             
-            let vc = vcType.init()
-            vc.title = item.title
-            //或者用下面的也可以!新版本不可以聊!
-            //vc.navigationController?.title = "测试"
+            //3.判断Item类型,跳转控制
+            if item.isKind(of: ZXMSettingArrowItem.self) {
+                //箭头模型
+                let arrowItem  = item as! ZXMSettingArrowItem
+                
+                //有控制器的时候才跳转,用守护语句守护一下.
+                //用下面的语句直接会崩掉.
+                //let vcType = arrowItem.desVC as! UIViewController.Type
+                guard  let vcType = arrowItem.desVC as? UIViewController.Type else { return }
+                
+                let vc = vcType.init()
+                vc.title = item.title
+                //或者用下面的也可以!新版本不可以聊!
+                //vc.navigationController?.title = "测试"
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             
-            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         
         
@@ -204,7 +238,27 @@ extension ZXMSettingTableViewController {
 }
 
 
+extension ZXMSettingTableViewController {
+   
+    /// 弹窗方法.
+    func setupAler()  {
+        let alertController = UIAlertController(title: "版本提示", message: "暂无版本", preferredStyle: .actionSheet)
+        
+        // let yesAction = UIAlertAction(title: "确定", style: .default, handler: nil) //不执行任何操作.
+        let yesAction = UIAlertAction(title: "确定", style: .default, handler: { (nil) in
+            //让程序再回到第0个问题.
 
+        })
+        let hahaAction = UIAlertAction(title: "哈哈", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "★取消★", style: .cancel, handler: nil)
+        alertController.addAction(yesAction)
+        alertController.addAction(hahaAction)
+        alertController.addAction(cancelAction)
+        
+        //以动画方式呈现.
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
 
 
 

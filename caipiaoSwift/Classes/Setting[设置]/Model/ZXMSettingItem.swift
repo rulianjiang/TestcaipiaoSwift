@@ -19,6 +19,9 @@ import UIKit
 //    case Switch
 //}
 
+//定义一个闭包.
+typealias operationBlock = ()->();
+
 /// 设置界面的模型.
 class ZXMSettingItem: NSObject {
     
@@ -28,7 +31,11 @@ class ZXMSettingItem: NSObject {
     /// 标题
     var title:String?
     
-
+    /// 点击这一行要做的事情:Block封装.
+    //var  operationBlock: (() -> ())?
+    //或者这样来
+    var operationBlock:operationBlock?
+    
      /// 创建Item的构造方法
      ///
      /// - Parameters:
@@ -38,5 +45,14 @@ class ZXMSettingItem: NSObject {
             self.icon = icon
             self.title = title
         }
+    
+    init(title: String?) {
+        self.title = title
+    }
+    
+ 
+    
+    
+    
  
 }
