@@ -36,9 +36,11 @@ extension ZXMPushTableViewController {
      func setupGroup0()  {
         
         let item = ZXMSettingArrowItem(title: "开奖推送")
-        item.desVC = ZXMScoreTableViewController.self
+        item.desVC = ZXMAwardTableViewController.self
         
         let item1 = ZXMSettingArrowItem(title: "比分直播")
+        item1.desVC = ZXMScoreTableViewController.self
+        
         let item2 = ZXMSettingArrowItem(title: "中奖动画")
         let item3 = ZXMSettingArrowItem(title: "彩购大厅")
         
@@ -49,6 +51,7 @@ extension ZXMPushTableViewController {
         //将行模型数组添加到数组总数中
         self.groups.add(group)
     }
+    
     
 }
 

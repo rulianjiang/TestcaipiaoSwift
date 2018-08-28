@@ -12,7 +12,7 @@ import UIKit
 class ZXMSettingTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: UITableViewCellStyle.value1, reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
     }
     
@@ -26,6 +26,7 @@ class ZXMSettingTableViewCell: UITableViewCell {
             self.imageView?.image = item?.icon
             self.textLabel?.text = item?.title
             self.detailTextLabel?.text = item?.subTitle
+            
             
             self.setupRightView()
         }
