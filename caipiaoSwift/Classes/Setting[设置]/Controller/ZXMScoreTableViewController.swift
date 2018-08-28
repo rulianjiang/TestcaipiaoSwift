@@ -71,3 +71,25 @@ extension ZXMScoreTableViewController {
         
     }
 }
+
+//重写子类的方法.
+extension ZXMScoreTableViewController {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = ZXMSettingTableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellID)
+        
+        //let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! ZXMSettingTableViewCell
+        
+        //1.取出行模型数组
+        let group = self.groups[indexPath.section] as! ZXMSettingGroup
+        
+        //2.取出数据模型
+        let item = group.items![indexPath.row] as! ZXMSettingItem
+        
+        //3.传递数据
+        cell.item = item
+        
+        return cell
+    }
+}
+

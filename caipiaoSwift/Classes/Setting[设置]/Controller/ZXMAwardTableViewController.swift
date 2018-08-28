@@ -57,6 +57,9 @@ extension ZXMAwardTableViewController {
         
         
         let cell = ZXMSettingTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellID)
+        
+        //修改下标题大小,在子类里面实现,不要在父类中实现.不然子类所有的字体都会变小.
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 8)
     
         
         //1.取出行模型数组
