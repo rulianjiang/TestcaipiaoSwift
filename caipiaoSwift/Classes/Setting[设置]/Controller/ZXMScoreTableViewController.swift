@@ -17,6 +17,10 @@ class ZXMScoreTableViewController: ZXMBaseTableViewController {
         self.setupGroup0()
         self.setupGroup1()
         self.setupGroup2()
+        self.setupGroup2()
+        self.setupGroup2()
+        self.setupGroup2()
+        self.setupGroup2()
         
     }
 
@@ -50,6 +54,18 @@ extension ZXMScoreTableViewController {
         
         let item = ZXMSettingItem(title: "结束时间")
         item.subTitle = "23:10"
+        //设置block事件.注意循环引用!
+        //只要把textField添加到cell上面,键盘处理,操作系统会帮我们处理.
+                item.operationBlock = { [weak self] (indexPath:IndexPath)  in
+                let cell = self?.tableView.cellForRow(at: indexPath)
+                let textField = UITextField()
+                //self?.view.addSubview(textField)
+                cell?.addSubview(textField)
+            
+            //成为第一响应者
+            textField.becomeFirstResponder()
+            
+        }
         let group = ZXMSettingGroup.groupWithHeaderAndFooterAndItems(headerTitle: nil, footerTitle: nil, items: [item] as NSArray)
         self.groups.add(group)
         

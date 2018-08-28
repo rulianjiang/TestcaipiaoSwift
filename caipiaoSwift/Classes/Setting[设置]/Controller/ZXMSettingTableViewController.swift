@@ -94,7 +94,7 @@ extension ZXMSettingTableViewController {
         
         //闭包循环引用的解决.!
         //[weak self] 和[unowned self] 的区别是 [weak self]处理的时候是一个可选类型。
-        item21.operationBlock = { [weak self] in
+        item21.operationBlock = { [weak self] (indexPath:IndexPath) in
             self?.setupAler()
             //print("检查新版本啊...!!!!")
         }

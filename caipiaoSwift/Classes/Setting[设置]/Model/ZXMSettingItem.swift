@@ -20,7 +20,7 @@ import UIKit
 //}
 
 //定义一个闭包.
-typealias operationBlock = ()->();
+typealias operationBlock = (_ indexPath:IndexPath)->();
 
 /// 设置界面的模型.
 class ZXMSettingItem: NSObject {

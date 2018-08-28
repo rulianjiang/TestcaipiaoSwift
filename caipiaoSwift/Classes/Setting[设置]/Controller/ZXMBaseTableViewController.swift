@@ -97,7 +97,7 @@ extension ZXMBaseTableViewController {
         //做事情只能做一件.
         if item.operationBlock != nil {
             
-            item.operationBlock!()
+            item.operationBlock!(indexPath)
         } else {
             
             //3.判断Item类型,跳转控制
@@ -132,5 +132,12 @@ extension ZXMBaseTableViewController {
         
     }
 
+    //开始滑动的时候调用.
+    override func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        //处理键盘
+        self.view.endEditing(true)
+
+    }
+    
 }
 
